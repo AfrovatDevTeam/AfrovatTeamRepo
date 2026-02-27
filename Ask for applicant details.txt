@@ -1,0 +1,45 @@
+// Ask for applicant details
+Console.Write("Enter your age: ");
+int age = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter your monthly income: ");
+double income = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Enter your credit score: ");
+int creditScore = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter your existing debt: ");
+double debt = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Are you employed? (yes/no): ");
+string employed = Console.ReadLine().ToLower();
+
+// Calculate debt percentage
+double debtPercentage = (debt / income) * 100;
+
+// REJECTION RULES (checked first)
+if (age < 21 || income < 10000 || creditScore < 600 || employed != "yes")
+
+    Console.WriteLine("Loan Rejected");
+
+
+// BEST CASE APPROVAL
+else if (age >= 21 && income >= 15000 && creditScore >= 650 &&
+debtPercentage < 50 && employed == "yes")
+
+    Console.WriteLine("Loan Approved");
+
+
+// APPROVED WITH CONDITIONS
+else if ((creditScore >= 600 && creditScore <= 649) || debtPercentage == 50)
+
+    Console.WriteLine("Approved with Higher Interest");
+
+
+// Default case
+else
+
+    Console.WriteLine("Loan Rejected");
+
+
+Console.ReadKey();

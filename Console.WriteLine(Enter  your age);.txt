@@ -1,0 +1,17 @@
+Console.WriteLine("Enter  your age:");
+int age =  Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Do you have drivers license(yes/no):");
+string hasLicense = Console.ReadLine();
+
+if (age > 18 && hasLicense == "yes:") 
+
+Console.WriteLine( " You Can drive:");
+
+else
+
+    Console.WriteLine(" You Can not drive:");
+
+
+
+Console.ReadKey();

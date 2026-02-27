@@ -1,0 +1,113 @@
+{
+    int highScore = 0;
+    bool playAgain = true;
+    Random rand = new Random();
+
+    while (playAgain)
+    {
+        Console.Clear();
+        Console.WriteLine("MASTERMIND LOGIC CHALLENGE");
+
+        int difficulty = ReadIntInRange("Select Difficulty (1=Easy, 2=Hard): ", 1, 2);
+
+        int attempts = difficulty == 1 ? 7 : 5;
+        int score = 100;
+
+        int n1, n2, n3;
+
+        do
+        {
+            n1 = rand.Next(1, 10);
+            n2 = rand.Next(1, 10);
+            n3 = rand.Next(1, 10);
+        }
+        while (n1 == n2 || n1 == n3 || n2 == n3);
+
+        bool win = false;
+
+        for (int round = 1; round <= attempts; round++)
+        {
+            Console.WriteLine("\nAttempt " + round);
+
+            int g1 = ReadIntInRange("Enter number 1 (1-9): ", 1, 9);
+            int g2 = ReadIntInRange("Enter number 2 (1-9): ", 1, 9);
+            int g3 = ReadIntInRange("Enter number 3 (1-9): ", 1, 9);
+
+            if (g1 == n1 && g2 == n2 && g3 == 3)
+            {
+                Console.WriteLine("YOU WIN");
+                win = true;
+                break;
+            }
+
+            Check(g1, n1, n2, n3, 1);
+            Check(g2, n1, n2, n3, 2);
+            Check(g3, n1, n2, n3, 3);
+
+            score -= 10;
+        }
+
+        if (!win)
+        {
+            Console.WriteLine("YOU LOST");
+            Console.WriteLine("Code was: " + n1 + " " + n2 + " " + n3);
+            score = 0;
+        }
+
+        Console.WriteLine("Score: " + score);
+
+        if (score > highScore)
+        {
+            highScore = score;
+        }
+
+        Console.WriteLine("High Score: " + highScore);
+
+        Console.Write("Play again? (yes/no): ");
+        string answer = (Console.ReadLine() ?? string.Empty).Trim().ToLowerInvariant();
+
+        if (answer != "yes")
+        {
+            playAgain = false;
+        }
+    }
+}
+
+static int ReadIntInRange(string prompt, int min, int max)
+{
+    while (true)
+    {
+        Console.Write(prompt);
+        string? input = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            Console.WriteLine("Invalid input");
+            continue;
+        }
+
+        if (int.TryParse(input, out int value) && value >= min && value <= max)
+        {
+            return value;
+        }
+
+        Console.WriteLine("Invalid input");
+    }
+}
+
+static void Check(int guess, int n1, int n2, int n3, int pos)
+{
+    if ((pos == 1 && guess == n1) ||
+    (pos == 2 && guess == n2) ||
+    (pos == 3 && guess == n3))
+    {
+        Console.WriteLine(guess + " Correct position");
+    }
+    else if (guess == n1 || guess == n2 || guess == n3)
+    {
+        Console.WriteLine(guess + " Wrong position");
+    }
+    else
+    {
+        Console.WriteLine(guess + " Not in code");
+    }
+}

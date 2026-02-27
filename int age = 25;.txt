@@ -1,0 +1,29 @@
+int age = 25;
+string name = "Alice";
+
+
+
+Console.WriteLine( "Name" + name);
+Console.WriteLine( "Age"  + age);
+
+
+// task 3 
+
+int a = 21;
+int b = 10;
+int c;
+
+c = a + b;
+Console.WriteLine( "Line 1 - value of c is {0}", c);
+c = a + b;
+Console.WriteLine("Line 2 - value of c is {0}", c);
+c = a + b;
+Console.WriteLine("Line 3 - value of c is {0}", c);
+c = a + b;
+Console.WriteLine("Line 4 - value of c is {0}", c);
+c = a + b;
+Console.WriteLine("Line 5 - value of c is {0}", c);
+c = a + b;
+Console.WriteLine("Line 6 - value of c is {0}", c);
+c = a + b;
+Console.WriteLine("Line 7 - value of c is {0}", c);

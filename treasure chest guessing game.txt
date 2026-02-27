@@ -1,0 +1,36 @@
+using System;
+using System.ComponentModel.Design;
+
+// TREASURE CHEST GUESSING GAME 
+
+{
+    string playerName;
+    int choice;
+
+    string[] chests = { "Empty ", "GOLD", "Empty", "Empty", "Empty :" };
+
+    Console.WriteLine("Enter your name:");
+    playerName = Console.ReadLine();
+
+    Console.WriteLine("Choose a treasure chest (1-5):");
+    choice = Convert.ToInt32(Console.ReadLine());
+
+    if (choice < 1 || choice > 5)
+    {
+        Console.WriteLine("Invalid choice ! Pick 1 to 5;");
+    }
+    else if (string.Equals(chests[choice - 1], "GOLD", StringComparison.OrdinalIgnoreCase))
+    {
+        Console.WriteLine("You found the GOLD! You win!");
+    }
+    else
+    {
+        Console.WriteLine("Sorry, empty chest. You lose.");
+    }
+
+    Console.ReadKey();
+}
+
+
+
+

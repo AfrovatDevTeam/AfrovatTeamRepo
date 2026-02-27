@@ -1,0 +1,30 @@
+
+int secret1 = 4;
+int secret2 = 7;
+int secret3 = 2;
+code breaker game
+Console.WriteLine("Welcome to the secret code guessing game!");
+
+Console.WriteLine(" Enter first number ");
+int guess1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter second number ");
+int guess2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter third number ");
+int guess3 = Convert.ToInt32(Console.ReadLine());
+
+// clue rules
+
+bool rule1 = guess1 > 3;
+bool rule2 = guess2 < 10;
+bool rule3 = guess3 < 2;
+
+bool isCorrect = (guess1 == secret1) && (guess2 == secret2) && (guess3 == secret3);
+
+if (rule1 && rule2 && rule3)
+{
+    Console.WriteLine("Congratulations! You guessed the secret code!");
+}
+else
+{
+    Console.WriteLine("Sorry, that's not the correct code. Try again!");
+}

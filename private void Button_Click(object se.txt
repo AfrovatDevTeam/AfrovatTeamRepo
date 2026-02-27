@@ -1,0 +1,15 @@
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+      string username = txtusername.Text;
+        string password =txtpassword1.Text;
+
+        if (username == "Francis" && password == "123")
+        {
+            MessageBox.Show(" Manger Login was successfull");
+        }
+        else
+        {
+            MessageBox.Show("Invalid username or password.");
+        }
+    }
+}

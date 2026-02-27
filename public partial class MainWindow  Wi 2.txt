@@ -1,0 +1,27 @@
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            string Name;
+            string StudentNumber;
+            InitializeComponent();
+        }
+
+        public string StudentNumber { get; private set; }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtName.Text == "" || txtStudentNumber.Text == "")
+            {
+                MessageBox.Show("Please fill in all fields.");
+
+            }
+            else
+            {
+              string Name = txtName.Text;
+                StudentNumber = txtStudentNumber.Text;
+                MessageBox.Show($"Name: {Name}\nStudent Number: {StudentNumber}");
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+temp
+
+    // Ask the user for the temperature
+    Console.Write("Enter the temperature in °C: ");
+    string input = Console.ReadLine();
+    int temp;
+
+    // Convert input to integer safely
+    if (int.TryParse(input, out temp))
+    
+        // Check temperature conditions
+        if (temp > 30)
+        
+            Console.WriteLine("Hot");
+        
+        else if (temp < 10)
+        
+            Console.WriteLine("Cold");
+        
+        else
+        
+            Console.WriteLine("Normal");
+       
+    
+    else
+    
+        Console.WriteLine("Invalid input! Please enter a number.");
+
+
+    // Wait for user to see result
+    Console.WriteLine("Press any key to exit.");
+    Console.ReadKey();

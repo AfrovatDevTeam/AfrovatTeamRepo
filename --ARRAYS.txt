@@ -1,0 +1,138 @@
+--ARRAYS
+data-type[]array-name=new data-type[size]
+array-name [element-nummber]-value;
+
+a=[A,B,C,D,E,F,G,H,I,J]--10 ELEMENTS
+   0 1 2 3 4 5 6 7 8 9 ---INDEX
+   1 2 3 4 5 6 7 8 9 10--WRONG APPROACH
+array- variables that stores multiple items of data
+
+element- the pieces of data stored in our array
+ 
+
+index- numbering of elements inside our array & numberings start at 0
+
+Console.Title = "Arrays";
+
+            //CREATED A STRING ARRAY
+            string[] cars = new string[3] { "BMW", "FORD", "'VW" };
+
+            //CREATE A 2 DIMENSIONAL ARRAY
+            int[,] coords = new int[2, 3] { { 1, 2, 3 }, { 4, 5,6}],
+            //DISPLAY OUTPUT WITH STORED ARRAY ELEMENTS VALUES
+ 
+            Console.WriteLine(" Second Car: " + cars[0]);
+            Console.WriteLine(" X1,Y1 " + coords[0,0]);
+            Console.WriteLine(" X2,Y3" + coords[1,2]);
+
+using System;
+
+// Ask user for input
+Console.WriteLine("Please enter name:");
+string name = Console.ReadLine();
+
+Console.WriteLine("Please enter age:");
+int age = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Please enter favorite color:");
+string favoriteColor = Console.ReadLine();
+
+
+// Display summary
+Console.WriteLine("\n--- Summary ---");
+Console.WriteLine("Name: " + name);
+Console.WriteLine("Age: " + age);
+Console.WriteLine("Favorite Color: " + favoriteColor);
+Console.ReadKey();
+// EXERCISE 2
+
+
+// Ask user for first number
+Console.WriteLine("Enter first number:");
+double num1 = Convert.ToDouble(Console.ReadLine());
+
+// Ask user for second number
+Console.WriteLine("Enter second number:");
+double num2 = Convert.ToDouble(Console.ReadLine());
+
+// Calculate results
+double sum = num1 + num2;
+double difference = num1 - num2;
+double product = num1 * num2;
+
+// Display results
+Console.WriteLine("\n--- Results ---");
+Console.WriteLine("Sum: " + sum);
+Console.WriteLine("Difference: " + difference);
+Console.WriteLine("Product: " + product);
+
+Console.ReadKey();
+
+using System;
+
+int[] numbers = new int[5];
+
+Console.Write("Enter number 1: ");
+numbers[0] = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter number 2: ");
+numbers[1] = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter number 3: ");
+numbers[2] = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter number 4: ");
+numbers[3] = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter number 5: ");
+numbers[4] = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("\nNumbers entered:");
+
+Console.WriteLine(numbers[0]);
+Console.WriteLine(numbers[1]);
+Console.WriteLine(numbers[2]);
+Console.WriteLine(numbers[3]);
+Console.WriteLine(numbers[4]);
+
+Console.ReadKey();
+
+using System;
+
+int[] numbers = new int[3];
+
+Console.Write("Enter number 1: ");
+numbers[0] = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter number 2: ");
+numbers[1] = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter number 3: ");
+numbers[2] = Convert.ToInt32(Console.ReadLine());
+
+int total= numbers[0]+numbers [1]+numbers[2];
+
+Console.WriteLine("\n The total of the number is: {total}");
+
+Console.WriteLine(total);
+Console.ReadKey();
+
+
+1.are a way of storing multiple values in one variable
+
+2.0 is the first element
+
+3.Arrays start at 0 because that’s how computers count positions in memory.
+
+The first box is position 0, the second box is position 1, and so on.
+
+
+
+4.A 5-box array has positions 0, 1, 2, 3, 4.
+
+numbers[5] tries to open a box that doesn’t exist.
+
+
+5.A variable is like one single box for one value.
+
+An array is like a row of boxes where you can keep many values of the same type.

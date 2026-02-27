@@ -1,0 +1,105 @@
+using System; 7
+class Program
+static void Maino
+double principal = 10000; // Loan amount
+double rate = 5.5 / 100 / 12; // Monthly interest rate
+int months = 60: Loan term
+double monthlyPayment = (principal * rate) / (1 - Math.Pow(1 + rate, -
+months));
+Console-WriteLine("Monthly Loan Payment: " + monthlyPayment);
+
+8
+using System;
+class Program
+static void Main()
+{
+int x = 5;
+x += 3; // Equivalent to x = x + 3
+Console WriteLine("x after += : " + x);
+
+using System;
+class Program
+static void Main()
+int x = 10;
+x -= 4; // Equivalent to x = x - 4
+Console.WriteLine("x after -= : " + x):
+
+9
+using System;
+class Program
+static void Main()
+{
+Console-Write"Enter your age: ");
+int age = Convert. ToInt32(Console.ReadLine());
+if (age >= 18)
+Console.WriteLine("You are eligible to vote!");
+else
+Console-WriteLine("Sorry, you must be 18+ to vote.");
+
+
+10
+using System;
+class Program
+static void Main()
+double price = 99.99;
+bool isAvailable = true;
+Console WriteLine("Price: $" + price);
+Console-WriteLine("In Stock: " + isAvailable);
+
+using System;
+class Program
+static void Main()
+int x = 5;
+x *= 2; // Equivalent to x = x * 2
+Console-WriteLine("x after *=: " + x);
+
+using System;
+class Program
+static void Main()
+int x = 20;
+x /= 4; // Equivalent to x = x / 4
+Console WriteLine("x after /= : " + x);
+
+using System;
+class Program
+static void Main()
+int x = 10;
+x %= 3; // Equivalent to x = x % 3
+Console WriteLine("x after %= : " + x);
+
+
+using System;
+class Program
+static void Main)
+int score = 50;
+score += 10; // Add points
+Console WriteLine("Current Score: " + score);
+
+
+Task 11 understanding decision making
+using System;
+namespace DecisionMaking {
+class Program (
+static void Main(string[] args) {
+/* local variable definition */
+int a = 10;
+/* check the boolean condition using if statement */
+if (a < 20) {
+/* if condition is true then print the following */ Console.WriteLine("a is less than 20");
+Console-WriteLine("value of a is : (0}", a);
+Console.ReadLine();
+12. Task 12 Understanding Nested IF statement
+using System;
+namespace DecisionMaking {
+class Program {
+static void Main(string[] args) {
+//* local variable definition */
+int a = 100;
+int b = 200;
+/* check the boolean condition */
+if (a == 100) {
+* if condition is true then check the following */
+if (b == 200) {
+/* if condition is true then print the following */ Console WriteLine("Value of a is 100 and b is 200");
+Console WriteLine("Exact value of a is : {®}", a);
+Console WriteLine("Exact value of b is : {0}". b):

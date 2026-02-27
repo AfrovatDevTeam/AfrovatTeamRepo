@@ -1,0 +1,19 @@
+string username = "Francis";
+string password = "123";
+
+try
+{
+    if (username == "Francis" && password == "123")
+    {
+        Console.WriteLine("Login Successful");
+    }
+    else 
+    {
+        Console.WriteLine("Incorrect Username or Password");
+    }
+
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+}

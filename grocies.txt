@@ -1,0 +1,82 @@
+using System;
+using System.Numerics;
+
+string customername;
+string[] items = new string[10];
+double[] price = new double[10];
+double total;
+
+Console.WriteLine("Enter customername:");
+customername= Console.ReadLine();
+
+Console.WriteLine("Enter grocery item 1:");
+items[0] = Console.ReadLine(); 
+ Console.WriteLine("Enter price for item 1:");
+price[0] = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Enter grocery item 2:");
+items[1] = Console.ReadLine();
+Console.WriteLine("Enter price for item 2:");
+price[1] = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Enter grocery item 3:");
+items[2] = Console.ReadLine();
+Console.WriteLine("Enter price for item 3:");
+price[2] = Convert.ToDouble(Console.ReadLine());
+
+
+Console.WriteLine("Enter grocery item 4:");
+items[3] = Console.ReadLine();
+Console.WriteLine("Enter price for item 4:");
+price[3] = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Enter grocery item 5:");
+items[4] = Console.ReadLine();
+Console.WriteLine("Enter price for item 5:");
+price[4] = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Enter grocery item 6:");
+items[5] = Console.ReadLine();
+Console.WriteLine("Enter price for item 6:");
+price[5] = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Enter grocery item 7:");
+items[6] = Console.ReadLine();
+Console.WriteLine("Enter price for item 7:");
+price[6] = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Enter grocery item 8:");
+items[7] = Console.ReadLine();
+Console.WriteLine("Enter price for item 8:");
+price[7] = Convert.ToDouble(Console.ReadLine());
+
+
+Console.WriteLine("Enter grocery item 9:");
+items[8] = Console.ReadLine();
+Console.WriteLine("Enter price for item 9:");
+price[8] = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Enter grocery item 10:");
+items[9] = Console.ReadLine();
+Console.WriteLine("Enter price for item 10:");
+price[9] = Convert.ToDouble(Console.ReadLine());
+
+total = price[0] + price[1] + price[2] + price[3] + price[4] + price[5] + 
+    price[6] + price[7] + price[8] + price[9];
+
+Console.WriteLine("customer:" + customername);
+
+Console.WriteLine(items[0] + " - R " + price[0]);
+Console.WriteLine(items[1] + " - R " + price[1]);
+Console.WriteLine(items[2] + " - R " + price[2]);
+Console.WriteLine(items[3] + " - R " + price[3]);
+Console.WriteLine(items[4] + " - R " + price[4]);
+Console.WriteLine(items[5] + " - R " + price[5]);
+Console.WriteLine(items[6] + " - R " + price[6]);
+Console.WriteLine(items[7] + " - R " + price[7]);
+Console.WriteLine(items[8] + " - R " + price[8]);
+Console.WriteLine(items[9] + " - R " + price[9]);
+
+Console.WriteLine("Total cost:R" + total);
+
+Console.ReadLine();

@@ -1,0 +1,35 @@
+using System;
+
+string studentname;
+int[] marks=new int[5];
+int total;
+double average;
+
+Console.WriteLine("Enter student name:");
+studentname = Console.ReadLine();
+
+Console.WriteLine("Enter mark for subject 1:");
+marks[0] = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Enter mark for subject 2:");
+marks[1] = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Enter mark for subject 3:");
+marks[2] = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Enter mark for subject 4:");
+marks[3] = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Enter mark for subject 5:");
+marks[4] = Convert.ToInt32(Console.ReadLine());
+
+total = marks[0] + marks[1] + marks[2] + marks[3] + marks[4];
+
+average = total;
+
+Console.WriteLine("Student Name:" + studentname);
+
+Console.WriteLine("Total Marks:" + total);
+Console.WriteLine("Average Marks:" + average);
+
+Console.ReadLine();
