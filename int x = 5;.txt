@@ -1,7 +1,0 @@
-int x = 5;
-x += 3;
-
-Console.WriteLine("x after += : " + x);
-
-reslts
-x after += : 8
