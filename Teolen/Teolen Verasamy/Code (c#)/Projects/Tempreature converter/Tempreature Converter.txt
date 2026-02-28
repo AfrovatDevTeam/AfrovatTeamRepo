@@ -1,0 +1,56 @@
+Tempreature Converter
+
+
+
+
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Temp
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            string[] a = { "Celsius", "Fahrenheit" };
+            string[] b = { "Fahrenheit", "Celsius" };
+
+            combobox1.ItemsSource = a;
+            combobox2.ItemsSource = b;
+        }
+
+        private void btnconverts_Click(object sender, RoutedEventArgs e)
+        {
+
+            double startingTemp;
+            double resultTemp;
+
+            startingTemp = double.Parse(userinput.Text);
+
+            if (combobox1.Text == "Celsius" && combobox2.Text == "Fahrenheit")
+            {
+                resultTemp = (startingTemp * (1.8 + 32));
+                txtoutput.Text = resultTemp.ToString() + " degrees in Celsuis";
+            }
+            if (combobox1.Text == "Fahrenheit" && combobox2.Text == "Celsuis")
+            {
+                resultTemp = (startingTemp -32) /1.8;
+                txtoutput.Text = resultTemp.ToString() + " degrees in Fahrenheit";
+            }
+
+        }
+    }
+}

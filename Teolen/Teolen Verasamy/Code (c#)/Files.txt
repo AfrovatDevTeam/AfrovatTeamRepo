@@ -1,0 +1,68 @@
+Files
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+using System.IO;  //you need these namesapce to work with files//
+
+namespace Serialization
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            bool fileExist = true;
+
+            string thePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            string theFile = thePath + @"\Task 2.txt";
+
+            fileExist = File.Exists(theFile);
+
+            try
+            {
+
+
+                if (fileExist)
+                {
+                    Console.WriteLine("The file Exists");
+
+                }
+                else
+                {
+                    Console.WriteLine("The file does not exist, let me create it");
+                    File.Create(theFile);
+                }
+                if (fileExist)
+                {
+                    Console.WriteLine("The file was created on {0}", File.GetCreationTime(theFile));
+                    Console.WriteLine("It was last accessed on {0}", File.GetLastAccessTime(theFile));
+
+
+                    // Console.WriteLine("Moving the file....");
+                    //File.Move(theFile, thePath + @"\newfile.txt");  //this moves the file from its existing path and create a new file and change the old file name//
+                }
+
+            }
+            catch (Exception ex)
+
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+
+//output
+
+The file Exists
+The file was created on 2/24/2026 12:02:51 PM
+It was last accessed on 2/24/2026 12:02:51 PM

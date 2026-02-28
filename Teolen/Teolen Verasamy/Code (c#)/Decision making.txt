@@ -1,0 +1,20 @@
+Decision making
+
+int a = 10;
+
+if (a < 20)
+{
+    Console.WriteLine("a is less then 20");
+}
+Console.WriteLine("value of a is : {0}", a);
+Console.ReadLine();
+
+
+
+
+
+
+
+[results]
+a is less then 20
+the value of a is : 10

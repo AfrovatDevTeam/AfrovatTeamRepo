@@ -1,0 +1,45 @@
+Manager Registration Window
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace WpfApp1
+{
+    /// <summary>
+    /// Interaction logic for Managers_Regstration.xaml
+    /// </summary>
+    public partial class Managers_Regstration : Window
+    {
+        public Managers_Regstration()
+        {
+            InitializeComponent();
+        }
+
+        private void managnameinput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void managfeesinput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+    }
+}

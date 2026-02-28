@@ -1,0 +1,32 @@
+Task 1
+
+
+
+using System;
+class GuessingGame{
+    static void Main()
+    {
+        int secretNumber = 7;
+        int guess;
+        Console.WriteLine("Guess the secret number between 1 and 10!");
+        do
+        {
+            guess = 7;
+            Console.WriteLine("Number to bee guessed is: " + guess);
+
+            if (guess < secretNumber)
+            {
+                Console.WriteLine("Too low! Try again. ");
+
+            }
+            else if (guess > secretNumber)
+            {
+                Console.WriteLine("Too High! Try again. ");
+            }
+
+
+
+//output
+Guess the secret number between 1 and 10!
+Number to be guessed is: 7
+Congratulations! You guessed the correct number.

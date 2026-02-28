@@ -1,0 +1,35 @@
+Task 1
+
+
+using System;
+    class student
+    {
+    public string Name {  get; set; }
+    public int Age { get; set; }
+    }
+
+
+
+
+
+using System;
+    class Program
+    {
+        static void Main()
+        {
+        student s = new student();
+
+        s.Name = "Aman";
+        s.Age = 20;
+
+
+        Console.WriteLine($"Name: {s.Name}, Age: {s.Age}");
+        }
+    }
+
+
+
+//output
+
+Name: Aman, Age: 20
+

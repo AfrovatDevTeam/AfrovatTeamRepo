@@ -1,0 +1,58 @@
+user input window
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace currency_convert
+{
+    /// <summary>
+    /// Interaction logic for user_input.xaml
+    /// </summary>
+    public partial class user_input : Window
+    {
+        public user_input()
+        {
+            InitializeComponent();
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void addbttn_Click(object sender, RoutedEventArgs e)
+        {
+            ListBox.Items.Add(userinput.Text);
+        }
+
+        private void removebttn_Click(object sender, RoutedEventArgs e)
+        {
+            this.ListBox.Items.RemoveAt(ListBox.SelectedIndex);
+        }
+
+        private void countbttn_Click(object sender, RoutedEventArgs e)
+        {
+        MessageBox.Show(this.ListBox.Items.Count.ToString(), "Total Current Value");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ListBox.Items.Clear();
+        }
+
+        private void userinput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+    }
+}

@@ -1,0 +1,11 @@
+    double princple = 10000;
+    double rate = 5.5 / 100 / 12;
+    int months = 60;
+
+    double monthlyPayment = (princple + rate) / (1 - Math.Pow(1 + rate, -months));
+
+Console.WriteLine("Monthly Loan Payment: " + monthlyPayment);
+
+results
+
+Monthly Loan Payment: 41675.2820214139

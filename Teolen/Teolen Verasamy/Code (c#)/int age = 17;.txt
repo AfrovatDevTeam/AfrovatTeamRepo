@@ -1,0 +1,5 @@
+             int age = 17;
+            string name="Teolen";
+
+            Console.WriteLine("Name "+ name);
+            Console.WriteLine("Age " + age);

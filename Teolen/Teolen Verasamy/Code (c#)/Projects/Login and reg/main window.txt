@@ -1,0 +1,51 @@
+main window
+
+
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfApp1
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void managerlogin_Click(object sender, RoutedEventArgs e)
+        {
+          Manager_login man = new Manager_login();
+            man.Show();
+        }
+
+        private void employeelogin_Click(object sender, RoutedEventArgs e)
+        {
+                Employee_login emp= new Employee_login();
+            emp.Show();
+        }
+
+        private void managersregstration_Click(object sender, RoutedEventArgs e)
+        {
+            Managers_Regstration manreg = new Managers_Regstration();   
+            manreg.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Student_reg stureg= new Student_reg();
+            stureg.Show();  
+        }
+    }
+}

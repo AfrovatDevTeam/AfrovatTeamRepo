@@ -1,0 +1,57 @@
+2nd Task 4
+
+
+
+namespace @new
+{
+    using System;
+
+    class Vehicle
+    {
+        public void Start()
+        {
+            Console.WriteLine("Vehicle is starting. ");
+        }
+    }
+
+    class Car : Vehicle
+    {
+        public void Drive()
+        {
+            Console.WriteLine("Car is driving");
+        }
+    }
+    class Bike : Vehicle
+    {
+        public void Ride()
+        {
+            Console.WriteLine("Bike is riding. ");
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Car myCar = new Car();
+            myCar.Start();
+            myCar.Drive();
+
+            Bike myBike = new Bike();
+            myBike.Start(); 
+            myBike.Ride();
+        }
+    }
+}
+
+
+
+
+
+
+//output
+
+Vehicle is starting.
+Car is driving
+Vehicle is starting.
+Bike is riding.

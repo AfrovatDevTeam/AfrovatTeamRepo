@@ -1,0 +1,39 @@
+Try and Catch exception (finally)
+
+
+try
+{
+    int[] myNum = { 1, 2, 3 };
+    Console.WriteLine(myNum[10]);
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
+
+//output 
+	Index was outside the bounds of the array.
+
+
+
+Added finally statement
+
+try
+{
+    int[] myNum = { 1, 2, 3 };
+    Console.WriteLine(myNum[10]);
+}
+catch (Exception e)
+{
+    Console.WriteLine("Something went wrong");
+}
+
+finally
+{
+    Console.WriteLine("The 'try catch' is finished.");
+}
+
+//output
+	Something went wrong
+The 'try catch' is finished.
+
