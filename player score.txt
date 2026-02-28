@@ -1,9 +1,0 @@
-player score
- int score = 50;
- score += 10;
-
- Console.WriteLine("current score: " + score);
-
-
-[result]
- current score 60
