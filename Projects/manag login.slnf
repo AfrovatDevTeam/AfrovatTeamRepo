@@ -1,8 +1,0 @@
-{
-  "solution": {
-    "path": "..\\..\\..\\..\\source\\repos\\Login\\Login.slnx",
-    "projects": [
-      "Login\\Login.csproj"
-    ]
-  }
-}
