@@ -1,7 +1,0 @@
-int x = 10;
-x -= 4;
-
-Console.WriteLine("x after-= : " + x);
-
-results
-x after-= : 6
