@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "..\\..\\..\\..\\source\\repos\\currency convert\\currency convert.slnx",
+    "projects": [
+      "currency convert\\currency convert.csproj"
+    ]
+  }
+}

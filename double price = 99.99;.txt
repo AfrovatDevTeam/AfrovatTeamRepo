@@ -1,0 +1,9 @@
+double price = 99.99;
+bool isAvailable = true;
+
+Console.WriteLine("Price: $" + price);
+Console.WriteLine("In Stock: " + isAvailable);
+
+result
+Price: $99.99
+In Stock: True

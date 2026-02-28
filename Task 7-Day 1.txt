@@ -1,0 +1,24 @@
+Task 7
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 5, 10, 15, 20 };
+
+        foreach (int n in numbers)
+        {
+            if (n == 15)
+                break;
+
+            Console.WriteLine(n);
+        }
+    }
+}
+
+
+//output
+
+5
+10

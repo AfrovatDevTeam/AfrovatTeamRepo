@@ -1,0 +1,39 @@
+2nd Task 3
+
+namespace @new
+{
+    using System;
+    
+        class Parent
+    {
+        public void Display()
+        {
+            Console.WriteLine("This is the Parents class. ");
+        }
+    }
+    class Child : Parent
+    {
+        public void Show()
+        {
+            Console.WriteLine("This is the childs class.");
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Child obj = new Child();
+            obj.Display();
+            obj.Show();
+        }
+    }
+    
+}
+
+
+//output
+
+This is the Parents class.
+This is the childs class.
+

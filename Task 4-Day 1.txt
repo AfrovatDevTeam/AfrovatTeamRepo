@@ -1,0 +1,29 @@
+Task 4
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        string password;
+        do
+        {
+            Console.WriteLine("Enter the password: ");
+            password = Console.ReadLine();
+        } while (password != "secure123");
+        Console.WriteLine("Access Granted. ");
+    }
+}
+
+
+//output
+
+Enter the password:
+null
+Enter the password:
+hi
+Enter the password:
+secure123
+Access Granted.
+
+

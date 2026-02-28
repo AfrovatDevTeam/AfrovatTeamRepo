@@ -1,0 +1,13 @@
+ int a = 7, b = 2;
+double c = 7, d = 2;
+
+Console.WriteLine("Integer Division: " + (a / b));
+        Console.WriteLine("Floating-Point Division: " + (c / d));
+ 
+
+
+results
+
+Integer Division: 3
+Floating-Point Division: 3.5
+

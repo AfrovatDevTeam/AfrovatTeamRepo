@@ -1,0 +1,9 @@
+using %=
+int x = 10;
+x %= 3;
+
+Console.WriteLine("x after %= : " + x);
+
+
+[result]
+x after %= 1
