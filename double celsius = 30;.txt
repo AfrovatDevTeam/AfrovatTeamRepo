@@ -1,8 +1,0 @@
-double celsius = 30;
-double fahrenheit = (celsius * 9 / 5) +32;
-
-Console.WriteLine("Tempreature in Fahrenhiet: " + fahrenheit);
-
-
-results
-Tempreature in Fahrenhiet: 86
