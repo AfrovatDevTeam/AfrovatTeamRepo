@@ -1,0 +1,60 @@
+Create table Customers1 (
+customer_id int primary key,
+customer_name Varchar(50),
+city Varchar(50)
+);
+
+insert into Customers
+values
+(101, 'Fatima', 'Johannesburg'),
+(102, 'Jane', 'Cape Town'),
+(103, 'Alex', 'Durban'),
+(104, 'Melanie', 'Bloemfontein'),
+(105, 'Maxine,', 'Johannesburg'),
+(106, 'Jay', 'Cape Town'),
+(107, 'Naslee', 'Durban'),
+(108, 'Azalia', 'Bloemfontein');
+
+Create table Branches (
+branch_id int primary key,
+branch_name Varchar(50),
+city Varchar(50),
+);
+
+insert into Branches
+values
+(58,'Sandton','Johannesburg'),
+(70,'Canal Walk','Cape Town'),
+(90,'Durban central','Durban'),
+(110,'Pretoria central','Pretoria');
+
+Create table Accounts (
+account_id int primary key,
+customer_id int,
+branch_id int,
+account_type Varchar(20),
+balance Decimal(12,2),
+FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+FOREIGN KEY (branch_id) REFERENCES BRANCHES (branch_id)
+);
+
+insert into Accounts
+values
+(323, 101, 58,'Cheque Account',(200),
+
+Create table Transactions (
+transaction_id int primary key,
+account_id int,
+transaction_date Date,
+transaction_type Varchar(20),
+amount Decimal (12,2),
+FOREIGN KEY (account_id) REFERENCES Accounts(account_id)
+);
+
+Create table Loans (
+loan_id int primary key,
+customer_id int,
+loan_amount Decimal (12,2),
+interest_rate Decimal (5,2),
+FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+);

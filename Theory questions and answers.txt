@@ -1,0 +1,18 @@
+Theory questions and answers:
+
+1.What is an array?
+Answer: An array is a data structure used in programming to store a collection of items of the same type in a single,organized structure.
+
+2.What does numbers(0)mean?
+Answer: It means to give the value of the first element.
+
+3.Why does an array start at index 0?
+Answer: It starts at 0 because it aligns directly with memory offsets and makes calculations simpler.
+
+4.What happens if you try to access numbers[5] in a 5-element array?
+Answer: You will get an error because the index is out of bounds.
+
+5.What is the difference between a variable and an array?
+Answer: A variable is a single storage location in memory that holds one value at a time.
+
+An array is a collection of variables stored together under one name where each element is accessed by an index.

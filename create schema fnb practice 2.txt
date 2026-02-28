@@ -1,0 +1,29 @@
+create schema fnb
+
+create table fnb.Gauteng
+(
+CustomerID int primary key not null,
+Name varchar(56) not null,
+Surname varchar(56) not null,
+Salary Money not null
+)
+insert into fnb.Gauteng
+values 
+(100, 'Francis', 'Anosike', 5000),
+(200, 'WENDY', 'MESH', 3000),
+(300, 'JOHN', 'WEBS', 6000);
+
+select * from fnb.Gauteng
+
+update fnb.Gauteng set Name = 'SARA', Surname = 'Martins', Salary = 1000 
+where CustomerID = 100
+
+
+delete from fnb.Gauteng where CustomerID = 100
+
+truncate table fnb.Gauteng
+
+DROP table fnb.Gauteng
+
+Alter table fnb.Gauteng
+add Price int not null

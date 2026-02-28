@@ -1,0 +1,48 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string playerName;
+        int num1, num2, num3;
+
+        //Secret code
+        int secret1 = 4;
+        int secret2 = 7;
+        int secret3 = 2;
+
+        Console.Write("Detective, enter your name: ");
+        playerName = Console.ReadLine();
+
+        Console.WriteLine("\n You must enter the 3-number code to unlock the vault.");
+
+        //Player enters numbers
+        Console.Write("Enter first number: ");
+        num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter second number: ");
+        num2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter third number: ");
+        num3 = Convert.ToInt32(Console.ReadLine());
+
+        //Show clues
+        Console.WriteLine("\nClues:");
+        Console.WriteLine("1. First number is greater than 3");
+        Console.WriteLine("2. second number is odd");
+        Console.WriteLine("3. third number is less than 5");
+
+        //Check if code matches exactly
+        if (num1 == secret1 && num2 == secret2 && num3 == secret3)
+        {
+            Console.WriteLine("\n Vault unlocked! Well done Detective " + playerName + "!");
+        }
+        else
+        {
+            Console.WriteLine("\n Access Denied! The vault remains locked.");
+        }
+        Console.WriteLine("Game over.");
+    }
+
+}

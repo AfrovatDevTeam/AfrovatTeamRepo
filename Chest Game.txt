@@ -1,0 +1,72 @@
+using System;
+
+class Program
+{
+    static void Main()
+    { 
+        string playerName;
+        int choice;
+
+        // Create array
+        string[] chests = new string[5];
+
+        // Fill all with empty
+        for (int i = 0; i < chests.Length; i++)
+        {
+            chests[i] = "Empty";
+        }
+
+        // Add treasures and trap
+        chests[1] = "Gold";      // Chest 2
+        chests[3] = "Gold";      // Chest 4
+        chests[4] = "Trap";      // Chest 5
+
+        // Player name
+        Console.Write("Enter your name: ");
+        playerName = Console.ReadLine();
+
+        // Guess
+        Console.Write("Choose a chest (1-5): ");
+        choice = Convert.ToInt32(Console.ReadLine());
+
+        // Validate input
+        if (choice < 1 || choice > 5)
+        {
+            Console.WriteLine("Invalid number! Please choose between 1 and 5.");
+        }
+        else
+        {
+            string result = chests[choice - 1];
+
+            if (result == "Gold")
+            {
+                Console.WriteLine(" Congratulations " + playerName + "! You found GOLD!");
+            }
+            else if (result == "Trap")
+            {
+                Console.WriteLine("Oh no! You opened the TRAP chest! You lose instantly!");
+            }
+            else
+            {
+                Console.WriteLine(" Sorry " + playerName + ", the chest was empty.");
+            }
+
+            Console.WriteLine("Inside chest " + choice + " was: " + result);
+        }
+
+        Console.WriteLine("Game Over!");
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+
+ 
+   
