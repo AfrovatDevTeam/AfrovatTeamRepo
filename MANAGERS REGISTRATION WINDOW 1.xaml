@@ -1,0 +1,22 @@
+﻿<Window x:Class="Prj__Navigations.MANAGERS_REGISTRATION_WINDOW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prj__Navigations"
+        mc:Ignorable="d"
+        Title="MANAGERS_REGISTRATION_WINDOW" Height="450" Width="800">
+    <Grid Background="#FF18E216">
+        <Label Content="Managers Registration Window" HorizontalAlignment="Left" Height="62" Margin="171,10,0,0" VerticalAlignment="Top" Width="473" FontFamily="Algerian" FontSize="25" FontWeight="Bold"/>
+        <Label Content="ManagersID" HorizontalAlignment="Left" Height="60" Margin="10,77,0,0" VerticalAlignment="Top" Width="250" FontFamily="Arial Black" FontSize="20" RenderTransformOrigin="0.542,-0.409"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Height="73" Margin="10,242,0,0" VerticalAlignment="Top" Width="250" FontFamily="Arial Black" FontSize="25"/>
+        <Label Content="RegFees" HorizontalAlignment="Left" Height="60" Margin="10,315,0,0" VerticalAlignment="Top" Width="250" FontFamily="Arial Black" FontSize="25"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="490,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="490,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="490,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="490,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"/>
+        <Label Content="NAME" HorizontalAlignment="Left" Height="47" Margin="10,170,0,0" VerticalAlignment="Top" Width="148" FontFamily="Arial Black" FontSize="25" FontWeight="Bold"/>
+        <Button Content="Register" HorizontalAlignment="Left" Height="79" Margin="198,345,0,0" VerticalAlignment="Top" Width="262" FontFamily="Algerian" FontSize="25" Background="#FFF6F91A"/>
+
+    </Grid>
+</Window>

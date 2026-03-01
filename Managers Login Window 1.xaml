@@ -1,0 +1,29 @@
+﻿<Window x:Class="Prj__Navigations.Managers_Login_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prj__Navigations"
+        mc:Ignorable="d"
+        Title="Managers_Login_Window" Height="450" Width="800">
+    <Grid Background="#FF2CFFE0">
+        <Label Content="USERNAME " HorizontalAlignment="Left" Margin="60,155,0,0" VerticalAlignment="Top" Width="180" Height="73" RenderTransformOrigin="0.5,0.5" FontFamily="Algerian" FontSize="25">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.515"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="PASSWORD" HorizontalAlignment="Left" Height="73" Margin="63,266,0,0" VerticalAlignment="Top" Width="180" FontFamily="Algerian" FontSize="25"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="54" Margin="162,10,0,0" VerticalAlignment="Top" Width="0"/>
+        <Label Content="Managers Login Window" HorizontalAlignment="Left" Height="78" Margin="126,37,0,0" VerticalAlignment="Top" Width="581" FontFamily="Algerian" FontSize="25"/>
+        <TextBox HorizontalAlignment="Left" Height="65" Margin="446,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261"/>
+        <TextBox HorizontalAlignment="Left" Height="65" Margin="446,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261"/>
+        <Button Content="LOGIN" HorizontalAlignment="Left" Height="71" Margin="212,353,0,0" VerticalAlignment="Top" Width="204" FontFamily="Algerian" FontSize="20" Background="#FFEF55F7"/>
+        <Button Content="Close / Cancel" HorizontalAlignment="Left" Height="71" Margin="488,353,0,0" VerticalAlignment="Top" Width="187" FontFamily="Algerian" FontSize="25"/>
+
+    </Grid>
+</Window>
