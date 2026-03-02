@@ -1,0 +1,92 @@
+multi currency converter
+
+
+
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace converter
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            string[] a = { "Rand", "Dollar", "Rupees" };
+            string[] b = { "Rand", "Dollar", "Rupees" };
+
+            combobox1.ItemsSource = a;
+            combobox2.ItemsSource = b;
+        }
+
+        private void combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void conbttn_Click(object sender, RoutedEventArgs e)
+        {
+            double i = double.Parse(txtinput.Text);
+
+
+
+            if (combobox1.SelectedItem == "Rand" && combobox2.SelectedItem == "Dollar")
+            {
+                double result = i * 0.062;
+                resultbox.Text = "US$: " + result.ToString();
+            }
+            if (combobox1.SelectedItem == "Rand" && combobox2.SelectedItem == "Rupees")
+            {
+                double result = i * 5.66;
+               resultbox.Text = "INR: " + result.ToString();
+            }
+            if (combobox1.SelectedItem == "Rand" && combobox2.SelectedItem == "Rand")
+            {
+                double result = i * 1;
+                resultbox.Text = "ZAR: " + result.ToString();
+            }           
+            if (combobox1.SelectedItem == "Dollar" && combobox2.SelectedItem == "Rand")
+            {
+                double result = i * 16.16;
+                resultbox.Text = "ZAR: " + result.ToString();
+            }
+            if (combobox1.SelectedItem == "Dollar" && combobox2.SelectedItem == "Rupees")
+            {
+                double result = i * 91.48;
+                resultbox.Text = "INR: " + result.ToString();
+            }
+            if (combobox1.SelectedItem == "Dollar" && combobox2.SelectedItem == "Dollar")
+            {
+                double result = i * 1;
+                resultbox.Text = "US$: " + result.ToString();
+            }
+            if (combobox1.SelectedItem == "Rupees" && combobox2.SelectedItem == "Rand")
+            {
+                double result = i * 0.18;
+                resultbox.Text = "ZAR: " + result.ToString();
+            }
+            if (combobox1.SelectedItem == "Rupees" && combobox2.SelectedItem == "Dollar")
+            {
+                double result = i * 0.011;
+                resultbox.Text = "US$: " + result.ToString();
+            }
+            if (combobox1.SelectedItem == "Rupees" && combobox2.SelectedItem == "Rupees")
+            {
+                double result = i * 1;
+                resultbox.Text = "INR: " + result.ToString();
+            }
+
+        }
+    }
+}
