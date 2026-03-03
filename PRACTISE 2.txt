@@ -1,0 +1,42 @@
+PRACTISE 2
+
+
+
+
+using System;
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+
+
+
+        string customerName;
+        string[] items = new string[10];
+        double[] prices = new double[10];
+        double total = 0;
+
+        Console.Write("Enter customer name: ");
+        customerName = Console.ReadLine();
+
+        for (int count = 0; count < 10; count++)
+        {
+            Console.Write("Enter item: ");
+            items[count] = Console.ReadLine();
+
+            Console.Write("Enter price: ");
+            prices[count] = Convert.ToDouble(Console.ReadLine());
+
+            total = total + prices[count];
+        }
+
+        Console.WriteLine("\nReceipt");
+        Console.WriteLine("Customer: " + customerName);
+
+        for (int count = 0; count < 10; count++)
+        {
+            Console.WriteLine(items[count] + " - R" + prices[count]);
+        }
+
+        Console.WriteLine("Total: R" + total);
+
+        Console.ReadLine();
+    

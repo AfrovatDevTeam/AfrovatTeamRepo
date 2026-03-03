@@ -1,0 +1,16 @@
+Input
+Console.Title = "Input";
+
+            
+            Console.WriteLine(" Please Enter Your Name:");
+            string name = Console.ReadLine();
+            Console.WriteLine(" Welcome" + name + "!");
+
+
+
+Console.WriteLine(" Please Enter A Number: ");
+            double num = Convert.ToDouble (Console.ReadLine());
+            Console.WriteLine(" Now Enter Another Number: ");
+            double sum = num + Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(" Total = " + sum);
+

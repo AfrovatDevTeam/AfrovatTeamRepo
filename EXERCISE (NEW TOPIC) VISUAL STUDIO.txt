@@ -1,0 +1,256 @@
+EXERCISE
+1
+
+// See https://aka.ms/new-console-template for more information
+using System;
+
+// Ask user for input
+Console.WriteLine("Please enter name:");
+string name = Console.ReadLine();
+
+Console.WriteLine("Please enter age:");
+int age = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Please enter favorite color:");
+string favoriteColor = Console.ReadLine();
+
+// Display summary
+Console.WriteLine("\n--- Summary ---");
+Console.WriteLine("Name: " + name);
+Console.WriteLine("Age: " + age);
+Console.WriteLine("Favorite Color: " + favoriteColor);
+
+
+
+
+
+//Exercise2//
+
+using System;
+Console.Write("Enter first number: ");
+string input1 = Console.ReadLine();
+
+Console.Write("Enter second number: ");
+string input2 = Console.ReadLine();
+
+double number1 = Convert.ToDouble(input1);
+double number2 = Convert.ToDouble(input2);
+
+Console.WriteLine("Sum = " + (number1 + number2));
+Console.WriteLine("Difference = " + (number1 - number2));
+Console.WriteLine("Product = " + (number1 * number2));
+
+Console.ReadLine();
+
+
+
+
+
+ARRAYS EXERCISE 1:Store and Display 5 Numbers  
+
+using System;
+
+        int[] numbers = new int[5];
+
+        Console.Write("Enter number 1: ");
+        numbers[0] = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number 2: ");
+        numbers[1] = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number 3: ");
+        numbers[2] = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number 4: ");
+        numbers[3] = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number 5: ");
+        numbers[4] = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("\nNumbers entered:");
+
+        Console.WriteLine(numbers[0]);
+        Console.WriteLine(numbers[1]);
+        Console.WriteLine(numbers[2]);
+        Console.WriteLine(numbers[3]);
+        Console.WriteLine(numbers[4]);
+
+        Console.ReadKey();
+    
+
+
+
+
+EXERCISE2:Calculate Total of 3 Numbers 
+
+
+using System;
+
+ 
+
+        int[] numbers = new int[3];
+
+        Console.Write("Enter number 1: ");
+        numbers[0] = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number 2: ");
+        numbers[1] = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number 3: ");
+        numbers[2] = Convert.ToInt32(Console.ReadLine());
+
+        int total = numbers[0] + numbers[1] + numbers[2];
+
+        Console.WriteLine("Total = " + total);
+
+        Console.ReadKey();
+    
+
+
+
+
+
+
+
+
+            
+EXERCISE3:Find Largest of 3 Numbers 
+
+
+using System;
+
+int[] numbers = new int[3];
+
+Console.Write("Enter number 1: ");
+numbers[0] = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter number 2: ");
+numbers[1] = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter number 3: ");
+numbers[2] = Convert.ToInt32(Console.ReadLine());
+
+int largest = numbers[0];
+
+if (numbers[1] > largest)
+{
+    largest = numbers[1];
+}
+
+if (numbers[2] > largest)
+{
+    largest = numbers[2];
+}
+
+Console.WriteLine("Largest number = " + largest);
+
+Console.ReadKey();
+
+
+THEORY QUESTIONS
+
+
+1. What is an array?
+
+
+An array is a collection of values stored in a single variable.
+It can store multiple values of the same data type, and each value is stored at a specific position called an index.
+
+
+
+
+
+
+
+2. What does numbers[0] mean?
+
+
+numbers[0] means the first value stored in the array.
+
+numbers = array name
+
+[0] = index position
+
+Index 0 refers to the first element
+
+
+
+
+
+
+3. Why does an array start at index 0?
+
+
+Arrays start at index 0 because that is how programming languages are designed.
+
+Index 0 represents the first memory location, index 1 is the second, and so on.
+
+
+
+
+
+4. What happens if you try to access numbers[5] in a 5-element array?
+
+
+
+You will get an error called: Index Out of Range Exception
+
+Because a 5-element array only has indexes:0, 1, 2, 3, 4
+
+
+
+
+
+5. What is the difference between a variable and an array?
+
+Variable:
+
+Stores one value
+
+Array:
+
+Stores multiple values
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

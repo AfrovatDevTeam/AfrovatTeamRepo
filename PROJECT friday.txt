@@ -1,0 +1,260 @@
+PROJECT
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter your name: ");
+        string name = Console.ReadLine();
+
+        string[] chests = { "Empty", "Gold", "Trap", "Empty", "Gold" };
+
+        Console.Write(name + ", choose a chest number (1-5): ");
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        if (choice < 1 || choice > 5)
+        {
+            Console.WriteLine("Invalid choice!");
+        }
+        else
+        {
+            int index = choice - 1;
+
+            Console.WriteLine("Inside the chest was: " + chests[index]);
+
+            if (chests[index] == "Gold")
+            {
+                Console.WriteLine("You WIN!");
+            }
+            else if (chests[index] == "Trap")
+            {
+                Console.WriteLine("TRAP! You lose instantly!");
+            }
+            else
+            {
+                Console.WriteLine("You lose!");
+            }
+        }
+
+        Console.ReadLine();
+    }
+}
+
+
+
+
+
+
+
+part2
+
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Secret code
+        int secret1 = 4;
+        int secret2 = 7;
+        int secret3 = 2;
+
+        int attempts = 5;
+
+        Console.WriteLine("=== CODE BREAKER LOGIC GAME ===");
+
+        while (attempts > 0)
+        {
+            Console.WriteLine("\nAttempts left: " + attempts);
+
+            // User input
+            Console.Write("Enter first number: ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter second number: ");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter third number: ");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+
+            // Check clues
+            if (num1 > 3)
+                Console.WriteLine("Clue 1 correct");
+            else
+                Console.WriteLine("Clue 1 wrong");
+
+            if (num2 % 2 == 1)
+                Console.WriteLine("Clue 2 correct");
+            else
+                Console.WriteLine("Clue 2 wrong");
+
+            if (num3 < 5)
+                Console.WriteLine("Clue 3 correct");
+            else
+                Console.WriteLine("Clue 3 wrong");
+
+            // Check exact match
+            if (num1 == secret1 && num2 == secret2 && num3 == secret3)
+            {
+                Console.WriteLine("\nVAULT UNLOCKED! YOU WIN!");
+                break;
+            }
+            else
+            {
+                // Show how many correct
+                int correct = 0;
+
+                if (num1 == secret1) correct++;
+                if (num2 == secret2) correct++;
+                if (num3 == secret3) correct++;
+
+                Console.WriteLine("Correct numbers in correct position: " + correct);
+            }
+
+            attempts--;
+        }
+
+        if (attempts == 0)
+        {
+            Console.WriteLine("\nYOU FAILED! The code was 4 7 2");
+        }
+
+        Console.WriteLine("\nGame Over");
+    }
+}
+
+
+
+
+
+
+
+Part3 
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int highScore = 0;
+        bool playAgain = true;
+        Random rand = new Random();
+
+        while (playAgain)
+        {
+            Console.Clear();
+            Console.WriteLine("MASTERMIND LOGIC CHALLENGE");
+
+            int difficulty = ReadIntInRange("Select Difficulty (1=Easy, 2=Hard): ", 1, 2);
+
+            int attempts = difficulty == 1 ? 7 : 5;
+            int score = 100;
+
+            int n1, n2, n3;
+
+            do
+            {
+                n1 = rand.Next(1, 10);
+                n2 = rand.Next(1, 10);
+                n3 = rand.Next(1, 10);
+            }
+            while (n1 == n2 || n1 == n3 || n2 == n3);
+
+            bool win = false;
+
+            for (int round = 1; round <= attempts; round++)
+            {
+                Console.WriteLine("\nAttempt " + round);
+
+                int g1 = ReadIntInRange("Enter number 1 (1-9): ", 1, 9);
+                int g2 = ReadIntInRange("Enter number 2 (1-9): ", 1, 9);
+                int g3 = ReadIntInRange("Enter number 3 (1-9): ", 1, 9);
+
+                if (g1 == n1 && g2 == n2 && g3 == n3)
+                {
+                    Console.WriteLine("YOU WIN");
+                    win = true;
+                    break;
+                }
+
+                Check(g1, n1, n2, n3, 1);
+                Check(g2, n1, n2, n3, 2);
+                Check(g3, n1, n2, n3, 3);
+
+                score -= 10;
+            }
+
+            if (!win)
+            {
+                Console.WriteLine("YOU LOST");
+                Console.WriteLine("Code was: " + n1 + " " + n2 + " " + n3);
+                score = 0;
+            }
+
+            Console.WriteLine("Score: " + score);
+
+            if (score > highScore)
+            {
+                highScore = score;
+            }
+
+            Console.WriteLine("High Score: " + highScore);
+
+            Console.Write("Play again? (yes/no): ");
+            string answer = (Console.ReadLine() ?? string.Empty).Trim().ToLowerInvariant();
+
+            if (answer != "yes")
+            {
+                playAgain = false;
+            }
+        }
+    }
+
+    static int ReadIntInRange(string prompt, int min, int max)
+    {
+        while (true)
+        {
+            Console.Write(prompt);
+            string? input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine("Invalid input");
+                continue;
+            }
+
+            if (int.TryParse(input, out int value) && value >= min && value <= max)
+            {
+                return value;
+            }
+
+            Console.WriteLine("Invalid input");
+        }
+    }
+
+    static void Check(int guess, int n1, int n2, int n3, int pos)
+    {
+        if ((pos == 1 && guess == n1) ||
+            (pos == 2 && guess == n2) ||
+            (pos == 3 && guess == n3))
+        {
+            Console.WriteLine(guess + " Correct position");
+        }
+        else if (guess == n1 || guess == n2 || guess == n3)
+        {
+            Console.WriteLine(guess + " Wrong position");
+        }
+        else
+        {
+            Console.WriteLine(guess + " Not in code");
+        }
+    }
+}

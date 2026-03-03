@@ -1,0 +1,72 @@
+PRACTISE
+
+
+using System; // Move this to the very top and add the semicolon
+
+Console.WriteLine("Hello, World!");
+
+// Declare variables
+double length;
+double width;
+double area;
+
+// Get length
+Console.Write("Enter length: ");
+length = Convert.ToDouble(Console.ReadLine());
+
+// Get width
+Console.Write("Enter width: ");
+width = Convert.ToDouble(Console.ReadLine());
+
+// Calculate area
+area = length * width;
+
+// Show results
+Console.WriteLine("Length: " + length);
+Console.WriteLine("Width: " + width);
+Console.WriteLine("Area: " + area);
+
+Console.ReadLine();
+
+
+
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Ask student name
+        Console.Write("Enter student name: ");
+        string name = Console.ReadLine();
+
+        // Array to store marks
+        double[] marks = new double[5];
+        double total = 0;
+
+        // Input marks
+        for (int counter = 0; counter < 5; counter++)
+        {
+            Console.Write("Enter mark for subject " + (counter + 1) + ": ");
+            marks[counter] = Convert.ToDouble(Console.ReadLine());
+            total = total + marks[counter];
+        }
+
+        // Calculate average
+        double average = total / 5;
+
+        // Display report
+        Console.WriteLine("\n--- Student Report ---");
+        Console.WriteLine("Student Name: " + name);
+        Console.WriteLine("Total Marks: " + total);
+        Console.WriteLine("Average Marks: " + average);
+
+        Console.ReadLine();
+    }
+}
+
+
+

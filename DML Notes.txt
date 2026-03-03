@@ -1,0 +1,20 @@
+DML statement-Data manipulation Language
+INSERT-Add Data To Table
+SELECT-Retrieve Data From A Table
+UPDATE-Modify Data From Table
+DELETE-Delete Data In A Table
+
+
+
+DDL statement-Data Definition Language
+CREATE-Create Data Based Objects 
+ALTER-Modify Database Object Like Table 
+DROP-Remove Database Objects 
+
+
+
+
+DCL-Data Control Language 
+GRANT-Permission On Data Base Objects
+DENY-Permission On The Data Base Objects
+REVOKE-Revoke Permission On Data Base Objects
