@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "prj_studentrecords.slnx",
+    "projects": [
+      "prj_studentrecords\\prj_studentrecords.csproj"
+    ]
+  }
+}
