@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "Multiwindows.slnx",
+    "projects": [
+      "Multiwindows\\Multiwindows.csproj"
+    ]
+  }
+}
