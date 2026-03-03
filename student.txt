@@ -1,35 +1,7 @@
-using System;
-
-string studentname;
-int[] marks=new int[5];
-int total;
-double average;
-
-Console.WriteLine("Enter student name:");
-studentname = Console.ReadLine();
-
-Console.WriteLine("Enter mark for subject 1:");
-marks[0] = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Enter mark for subject 2:");
-marks[1] = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Enter mark for subject 3:");
-marks[2] = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Enter mark for subject 4:");
-marks[3] = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Enter mark for subject 5:");
-marks[4] = Convert.ToInt32(Console.ReadLine());
-
-total = marks[0] + marks[1] + marks[2] + marks[3] + marks[4];
-
-average = total;
-
-Console.WriteLine("Student Name:" + studentname);
-
-Console.WriteLine("Total Marks:" + total);
-Console.WriteLine("Average Marks:" + average);
-
-Console.ReadLine();
+﻿Build started at 13:37...
+1>------ Build started: Project: prj_studentrecords, Configuration: Debug Any CPU ------
+1>  Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>  Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>  prj_studentrecords -> C:\Users\Lenovo-User\source\repos\prj_studentrecords\prj_studentrecords\bin\Debug\net10.0-windows\prj_studentrecords.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build completed at 13:37 and took 02,423 seconds ==========
