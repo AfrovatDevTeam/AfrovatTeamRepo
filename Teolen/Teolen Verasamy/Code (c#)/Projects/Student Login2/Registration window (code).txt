@@ -1,0 +1,77 @@
+Registration window (code)
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using System.Xml.Linq;
+
+namespace StudentLogin2
+{
+    /// <summary>
+    /// Interaction logic for studentReg.xaml
+    /// </summary>
+    public partial class studentReg : Window
+    {
+        public studentReg()
+        {
+            InitializeComponent();
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            connecttoDB dbc = new connecttoDB();
+
+            dbc.RegisterStudents(Convert.ToInt32(txtID.Text), txtName.Text, txtSurname.Text, txtAddress.Text, txtRegFees.Text);
+            MessageBox.Show("Student Registered Successfully");
+            txtID.Text = "";
+            txtName.Text = "";
+            txtSurname.Text = "";
+            txtAddress.Text = "";
+            txtRegFees.Text = "";
+            
+
+
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            connecttoDB dbc = new connecttoDB();
+            dbc.DeleteStudent(Convert.ToInt32(txtID.Text));
+            MessageBox.Show("Customer deleted Successfully");
+            txtID.Text = "";
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            connecttoDB dbc = new connecttoDB();
+            dbc.UpdateStudentInfor(Convert.ToInt32(txtID.Text), txtName.Text, txtSurname.Text, txtAddress.Text, txtRegFees.Text);
+            MessageBox.Show("Student Info updated successfully");
+
+            txtID.Text = "";
+            txtName.Text = "";
+            txtSurname.Text = "";
+            txtAddress.Text = "";
+            txtRegFees.Text = "";
+
+                
+        }
+    }
+}
+
+

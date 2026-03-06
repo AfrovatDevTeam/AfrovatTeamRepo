@@ -1,0 +1,60 @@
+connectDB class
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+using System.Data;
+using System.Data.Sql;
+using System.Data.Entity;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+
+namespace StudentLogin2
+{
+    public class connecttoDB
+    {
+        SqlConnection con = new SqlConnection(@"Data Source = TEOLEN\SQLEXPRESS; Initial Catalog = StudentdemoDBS; Integrated Security = True");
+        SqlCommand command;
+        public DataTable table;
+        DataRow row;
+        SqlDataReader reader;
+
+        public void RegisterStudents(int StudentID,string Name,string Surname,string Address,string RegFees)
+
+        {
+            con.Open();
+            command = new SqlCommand(string.Format("Insert into StudentReg values ('{0}','{1}','{2}','{3}','{4}')", StudentID, Name, Surname, Address, RegFees), con);
+            command.ExecuteNonQuery();
+            con.Close();
+            command.Dispose();
+            
+        }
+        public void DeleteStudent(int StudentID)
+        {
+            con.Open();
+            command = new SqlCommand(string.Format("Delete from StudentReg"+" where StudentID=@StudentID"),con);
+            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.ExecuteNonQuery();
+            con.Close();
+            command.Dispose ();
+        }
+        public void UpdateStudentInfor(int StudentID, string Name, string Surname, string Address, string RegFees)
+        {
+            con.Open();
+            command = new SqlCommand(string.Format("Update StudentReg set Name=@Name"+",Surname=@Surname"+",Address=@Address"+",RegFees=@RegFees"+"  where StudentID=@StudentID"), con);
+            command.Parameters.AddWithValue("@Name", Name);
+            command.Parameters.AddWithValue("@Surname", Surname);
+            command.Parameters.AddWithValue("@Address", Address);
+            command.Parameters.AddWithValue("@RegFees", RegFees);
+            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.ExecuteNonQuery();
+            con.Close();
+            command.Dispose();
+
+        }
+    }
+}
+

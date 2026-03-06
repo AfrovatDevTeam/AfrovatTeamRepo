@@ -1,0 +1,73 @@
+Student Login1 (mainwindow code)
+
+
+
+
+
+
+using System.Data.SqlClient;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace StudentLogin2
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void btnlogin_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source = TEOLEN\SQLEXPRESS; Initial Catalog = StudentdemoDBS; Integrated Security = True");
+
+            try
+            {
+                if (con.State == System.Data.ConnectionState.Closed)
+                    con.Open();
+
+                string query = "select count(1) From StudentLogin where Username=@Username AND Password=@Password";
+                SqlCommand sqlcmd = new SqlCommand(query, con);
+                sqlcmd.CommandType = System.Data.CommandType.Text;
+                sqlcmd.Parameters.AddWithValue("@Username", txtusername.Text);
+                sqlcmd.Parameters.AddWithValue("@Password", txtpassword.Text);
+
+                int count = Convert.ToInt32(sqlcmd.ExecuteScalar());
+                if (count == 1)
+                {
+                    MessageBox.Show("Logged in successful");
+
+                    studentReg nav = new studentReg();
+                    nav.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Username or Password.");
+                }
+                }
+                 catch (Exception ex)
+                {
+                MessageBox.Show(ex.Message);
+                }
+                 finally
+                {
+                con.Close();
+                }
+        }
+    }
+}
+        
+    
