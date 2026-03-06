@@ -1,0 +1,78 @@
+Makro Staff Login(code)
+
+
+
+using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq.Expressions;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace MakroPj
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void loginbttn_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=TEOLEN\SQLEXPRESS;Initial Catalog=MakroDB;Integrated Security=True");
+
+            try
+            {
+                if (con.State == System.Data.ConnectionState.Closed)
+                    con.Open();
+
+                string query = "Select count(1) From StaffLogin Where StaffUsername=@Username AND StaffPassword=@Password";
+                SqlCommand sqlcmd = new SqlCommand(query, con);
+                sqlcmd.CommandType = System.Data.CommandType.Text;
+                sqlcmd.Parameters.AddWithValue("@Username", userinput.Text);
+                sqlcmd.Parameters.AddWithValue("@Password", psswrdinput.Text);
+
+                int count = Convert.ToInt32(sqlcmd.ExecuteScalar());
+                if (count == 1) 
+                {
+                    MessageBox.Show("Login Successful!");
+                    registrationwindow nav = new registrationwindow();
+                    nav.Show();
+                }
+
+
+                else
+                {
+                    MessageBox.Show("Username or Password is incorrect.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+
+        }
+          
+
+        }
+    
+
+

@@ -1,0 +1,60 @@
+ConnectToDBS class
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+using System.Data;
+using System.Data.Entity;
+using System.Data.Sql;
+using System.Data.SqlTypes;
+using System.Data.SqlClient;
+
+namespace MakroPj
+{
+   public class ConnectToDB
+    {
+        SqlConnection con = new SqlConnection("Data Source=TEOLEN\\SQLEXPRESS;Initial Catalog=MakroDB;Integrated Security=True");
+        SqlCommand command;
+        public DataTable table;
+        DataRow row;
+        SqlDataReader reader;
+
+        public void RegisterProduct(int ProductID,string ProductName,string Description,string Soldby,string Quantity,string Amount) 
+        {  
+            con.Open();
+            command = new SqlCommand(string.Format("Insert into Products values ('{0}','{1}','{2}','{3}','{4}','{5}')", ProductID,ProductName,Description,Soldby,Quantity,Amount), con);
+            command.ExecuteNonQuery();
+            con.Close();
+            command.Dispose();
+        }
+        public void deleteProduct(int ProductID)
+        {
+          con.Open() ;
+            command = new SqlCommand(string.Format("Delete from Products"+" where ProductID=@ProductID"), con);
+            command.Parameters.AddWithValue("@ProductID", ProductID);
+            command.ExecuteNonQuery();
+            con.Close();
+            command.Dispose();
+        }
+        public void UpdateProductInfo(int ProductID, string ProductName, string Description, string Soldby, string Quantity, string Amount)
+        {
+            con.Open();
+            command = new SqlCommand(string.Format("Update Products set ProductName=@ProductName"+",Description=@Description"+",Soldby=@Soldby"+",Quantity=@Quantity"+",Amount=@Amount"+" where ProductID=@ProductID"), con);
+
+            command.Parameters.AddWithValue("@ProductName", ProductName);
+            command.Parameters.AddWithValue("@Description", Description);
+            command.Parameters.AddWithValue("@Soldby", Soldby);
+            command.Parameters.AddWithValue("@Quantity", Quantity);
+            command.Parameters.AddWithValue("Amount", Amount);
+            command.Parameters.AddWithValue("@ProductID", ProductID);
+
+            command.ExecuteNonQuery();
+            con.Close();
+            command.Dispose();
+        }
+
+    }
+}
