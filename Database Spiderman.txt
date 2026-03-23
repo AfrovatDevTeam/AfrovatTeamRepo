@@ -1,0 +1,27 @@
+create database Spiderman
+
+create table clothingline (
+SAID int primary key not null,
+Name varchar(45) not null,
+Surname varchar(45) not null,
+Address varchar(45) not null,
+Sitpends money not null,
+MaritalStatus varchar(56) not null
+)
+
+insert into clothingline
+values 
+(123451999, 'Fatima', 'Jardine','Braamfontein', 10000, 'Single'),
+(200, 'Francis','Anosike', 'Auckland Park',5000,'Married'),
+(500, 'Lerato', 'holland','Sandton',2500,'Married');
+
+select * from clothingline
+
+
+
+
+
+Select * from clothingline
+
+Delete from clothingline wh
+

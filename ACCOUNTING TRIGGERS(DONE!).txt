@@ -1,0 +1,244 @@
+----QUESTION 1: Create the Database (10 Marks)-----
+Create database AccountingDB
+
+------QUESTION 2: Create Tables (25 Marks)----
+---2.1
+CREATE TABLE Clients (
+    ClientID INT  PRIMARY KEY NOT NULL,
+    ClientName VARCHAR(MAX) NOT NULL,
+    AccountBalance DECIMAL(16, 2) DEFAULT 0 NOT NULL
+);
+
+Drop table Clients
+
+INSERT INTO Clients
+VALUES
+(1, 'Peter Parker', 1600.50),
+(2, 'Jesus Christ', 1300.00),
+(3, 'Chris Brown', 700.75);
+
+SELECT * FROM Clients
+
+
+
+
+---2.2
+
+ CREATE TABLE Accounts (
+    AccountID INT  PRIMARY KEY NOT NULL,
+    ClientID INT NOT NULL,
+    AccountName VARCHAR(max) NOT NULL,
+    Balance DECIMAL(16, 2) DEFAULT 0 NOT NULL,
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+);
+
+
+
+INSERT INTO Accounts
+VALUES
+(1, 1, 'Savings Account', 2500.00),
+(2, 1, 'Checking Account', 1900.50),
+(3, 2, 'Personal Account', 7700.00);
+
+SELECT * FROM Accounts
+
+
+
+
+
+---2.3
+
+CREATE TABLE Transactions (
+    TransactionID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,  -- Make TransactionID an identity column
+    AccountID INT NOT NULL,
+    TransactionType VARCHAR(10) NOT NULL CHECK (TransactionType IN ('Debit', 'Credit')),
+    Amount DECIMAL(18, 2) NOT NULL,
+    TransactionDate DATETIME DEFAULT GETDATE() NOT NULL,   -- Use DATETIME for timestamps
+    FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID)
+);
+
+DROP TABLE Transactions
+
+INSERT INTO Transactions 
+ VALUES 
+(1, 'Debit', 1818.00, GETDATE()),
+(2, 'Credit', 690.00, GETDATE()),
+(3, 'Credit', 4230.00, GETDATE());
+
+Select * from Transactions
+
+
+
+
+----2.4
+
+CREATE TABLE AuditLog (
+    AuditID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    TableName VARCHAR(MAX) NOT NULL,
+    ActionType VARCHAR(MAX) NOT NULL,
+    ActionDate DATETIME DEFAULT GETDATE() NOT NULL,
+    Description VARCHAR(MAX) NOT NULL
+);
+
+
+DROP TABLE AuditLog
+
+INSERT INTO AuditLog 
+VALUES 
+('Clients', 'INSERT', GETDATE(), 'Inserted new client'),
+('Accounts', 'UPDATE', GETDATE(), 'Updated account balance'),
+('Transactions', 'DELETE', GETDATE(), 'Deleted transaction record');
+
+Select * from AuditLog
+
+----QUESTION 3: Insert Sample Data (10 Marks)----
+
+INSERT INTO Clients VALUES
+(4, 'Katt Williams', 1963.00);
+
+SELECT * FROM Clients
+SELECT * FROM Accounts
+
+
+INSERT INTO Accounts 
+VALUES (4, 4, 'Public Account', 5000.00);
+
+
+----QUESTION 4: Trigger – Update Account Balance (20 Marks)---
+
+CREATE TRIGGER trg_AfterInsert_Transactions
+ON Transactions
+AFTER INSERT
+AS
+BEGIN  -- Update account balances based on transaction type
+ UPDATE Accounts
+    SET Balance = 
+        CASE 
+            WHEN i.TransactionType = 'Debit' THEN Balance - i.Amount
+            WHEN i.TransactionType = 'Credit' THEN Balance + i.Amount
+        END
+    FROM Accounts a
+    INNER JOIN inserted i ON a.AccountID = i.AccountID
+    WHERE i.TransactionType IN ('Debit', 'Credit');
+END;
+
+select * from Transactions
+
+
+
+
+----QUESTION 5: Trigger – Audit Transactions (15 Marks)-----
+
+CREATE TRIGGER trg_AuditTransactionInsert
+ON Transactions
+AFTER INSERT
+AS
+BEGIN
+    -- Log the insert action into the AuditLog table
+    INSERT INTO AuditLog (TableName, ActionType, ActionDate, Description)
+    SELECT 
+   'Transactions',                         -- Table name being affected
+        'INSERT',                               -- Action type
+        GETDATE(),                             -- Current date and time
+        CONCAT('Inserted transaction of R', i.Amount, ' for Account ID ', i.AccountID)  -- Description of the transaction
+    FROM inserted i;                          -- Use the 'inserted' table to access the new records
+END;
+
+
+INSERT INTO Transactions (TransactionID, AccountID, TransactionType, Amount, TransactionDate) 
+VALUES (4, 4, 'Credit', 1000.00, GETDATE());
+
+SELECT * FROM AuditLog;
+
+
+-----QUESTION 6: Trigger – Prevent Deleting Transactions (10 Marks)
+
+CREATE TRIGGER trg_PreventDelete_Transactions
+ON Transactions
+INSTEAD OF DELETE
+AS
+BEGIN      -- Raise an error message to prevent deletion
+RAISERROR('Deleting financial transactions is not allowed.', 16, 1);
+ROLLBACK;  -- Rollback the delete operation
+END;
+
+SELECT * FROM Transactions
+
+DELETE FROM Transactions
+WHERE TransactionID = 1;
+
+
+---QUESTION 7: Trigger – Prevent Negative Balances (10 Marks)
+
+DROP TRIGGER IF EXISTS trg_PreventNegativeBalance;
+
+CREATE TRIGGER trg_PreventNegativeBalance
+ON Accounts
+INSTEAD OF UPDATE
+AS
+BEGIN
+    -- Check if any updated balances would result in a negative balance
+    IF EXISTS (
+        SELECT 1
+        FROM inserted i
+        JOIN Accounts a ON i.AccountID = a.AccountID
+        WHERE (a.Balance + (i.Balance - a.Balance) < 0)  -- Check for negative balance
+    )
+    BEGIN
+        -- Raise an error message
+        RAISERROR('Account balance cannot go below zero.', 16, 1);
+        ROLLBACK;  -- Roll back the update transaction
+        RETURN;  -- Exit the trigger after rollback
+    END
+
+    -- Proceed with the update
+    UPDATE Accounts
+    SET Balance = i.Balance
+    FROM inserted i
+    WHERE Accounts.AccountID = i.AccountID;
+END;
+
+DROP TRIGGER trg_PreventNegativeBalance
+
+Select * from Accounts
+
+SELECT *
+FROM sys.triggers
+WHERE name = 'trg_PreventNegativeBalance';
+
+UPDATE Accounts
+SET Balance = -5100.00 
+WHERE AccountID = 2;
+
+
+
+
+
+
+
+----PRACTICAL TESTING SECTION (Required)----
+
+----Run the following tests and ensure your triggers work correctly.
+
+---Test 1: Credit Transaction
+
+INSERT INTO Transactions (AccountID, TransactionType, Amount)
+VALUES (1, 'Credit', 2000);
+
+SELECT * FROM Transactions
+
+----Test 2: Debit Transaction
+
+INSERT INTO Transactions (AccountID, TransactionType, Amount)
+VALUES (1, 'Debit', 1000);
+
+
+----Test 3: Invalid Delete
+
+DELETE FROM Transactions WHERE TransactionID = 1;
+
+
+----Test 4: Overdraw Attempt
+
+INSERT INTO Transactions (AccountID, TransactionType, Amount)
+VALUES (1, 'Debit', 10000);
