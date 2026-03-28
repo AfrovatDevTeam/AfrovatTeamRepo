@@ -1,0 +1,78 @@
+Day 2 PYTHON
+
+
+#stock reorder level   stock(input)to enter current stock level
+#out of stock urgent order needed
+#below 10 = (low stock level)
+#else stock level normal
+Stock_level=int(input('Enter current stock level:'))
+if Stock_level==0:
+     print('Out Stock ,Place an Order.')
+elif Stock_level<10:
+     print(f'Stock level is low.Current stock level: {Stock_level}')
+else:
+     print(f'Stock level is normal.Current stock: {Stock_level}')
+
+||Enter current stock level: 100||
+||Stock level is normal.Current stock: 100||
+
+
+#customer points check
+points=int(input('Enter the current total of your points:'))
+if points ==0:
+    print('You are not a qualifying Customer')
+elif points>=1000:
+    print('You qualify as a Platinum Customer')
+elif points<=500:
+    print('You qualify as a Gold Customer')
+elif points<=200:
+    print('You qualify as a Sliver Customer.') 
+else:
+    print('You qualify as a Basic Customer')
+
+||Enter the current total of your points: 0||
+||You are not a qualifying Customer||
+
+
+balance=1000
+print('1.Balance','\n2.Deposit Money','\n3.Withdraw Money','\n4.Exit')
+user_input=(input('Pick an option from 1-4:'))
+if user_input=="1":
+     print(f'Your balance is {balance}.')
+elif user_input=="2":
+   deposit=float(input('Enter the amount of money you want to deposit.'))
+   r=(balance+deposit)
+   print(f'You have {r} amount of money remaining')
+elif user_input=="3":
+    amount = float(input('Enter withdrawal amount:R'))
+    if amount <= r:
+     balance = r-amount
+     print('Withdrawal successful, your new balance is:R',balance)
+    else:
+     print('Not enough money')
+elif user_input=="4":
+    print('App closed successfully.')
+
+||1.Balance ||
+||2.Deposit Money|| 
+||3.Withdraw Money ||
+||4.Exit||
+||Pick an option from 1-4: 2||
+||Enter the amount of money you want to deposit. 100||
+||You have 1100.0 amount of money remaining||
+
+
+number=2
+while number<20:
+    print(number)
+    number+=2
+
+||2
+4
+6
+8
+10
+12
+14
+16
+18||

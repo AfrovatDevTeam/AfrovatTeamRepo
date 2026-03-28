@@ -1,0 +1,120 @@
+Level2_Day3
+
+
+class employees:
+    def work(self):
+        return "Working for the company"
+class manager(employees):
+    def work (self):
+        return "Manager plans and executing"
+class intern (employees):
+    def work (self):
+        return "Intern Learns"
+workers = [employees(), manager(), intern()]
+for w in workers:
+    print(w.work())
+
+
+||Working for the company
+Manager plans and executing
+Intern Learns||
+
+
+
+class shapes:
+    def area(self):
+        return 0
+class square(shapes):
+    def __init__(self, L, W):
+        self.L = L
+        self.W = W
+    def area(self):
+         return self.L*self.W
+class circle(shapes):
+    def __init__(self, r):
+        self.r = r
+    def area(self):
+         return 3.142*self.r*self.r
+s = [square(50,50), circle(25)]
+for shapes in s:
+    print(shapes.area())
+
+||2500
+1963.75||
+
+
+
+
+#Encapsulation
+class student:
+    def __init__(self, name):
+        self.__name = name #private variable
+    def get_name(self):
+        return self.__name
+    def set_name(self, new_name):
+        self.__name = new_name  #setting method
+S = student('Thomas')
+print(S.get_name())
+S.set_name('Gutter')
+print(S.get_name())
+
+
+||Thomas
+Gutter||
+
+
+
+
+#protecting bank info
+class Bank_Account:
+    def __init__(self, balance):
+        self.__balance = balance
+    def deposit(self, amount):
+        self.__balance += amount
+    def get_balance (self):
+        return self.__balance
+BA = Bank_Account(1000)
+BA.deposit(100)
+print(BA.get_balance())
+
+
+||1100||
+
+
+
+
+#_var for protected vari
+class car:
+    def __init__(self, brand):
+        self._brand = brand
+c = car("Ford")
+print(c._brand)
+
+
+||Ford||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

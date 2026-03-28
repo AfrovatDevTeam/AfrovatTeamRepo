@@ -1,0 +1,419 @@
+Python_Day5
+
+
+coordinations = (-26.2041 , 28.1473)
+print('Latitude:', coordinations[0])
+print('Longitude:', coordinations[1])
+
+||Latitude: -26.2041
+Longitude: 28.1473
+||
+
+
+
+for element in coordinations:
+    print (element)
+
+||-26.2041
+28.1473||
+
+
+
+ingredients = ('buns','patties','eggs')
+ingredients [0]
+||'buns'||
+
+
+#dictionary
+pet_info = {
+    'name' : 'Kiloz',
+    'Age' : '5',
+    'type_of_animal' : 'Dog',
+    'breed' : 'Pitbull'
+}
+pet_info['name']
+user_input = input("Enter kennel number of the animal u want to inquire about:")
+if user_input == '1':
+    # Print each value individually or format them together
+    print(f"Name: {pet_info['name']}, Age: {pet_info['Age']}, Type: {pet_info['type_of_animal']}, Breed: {pet_info['breed']}")
+    
+    # Alternative: print the entire dictionary
+    # print(pet_info)
+
+||Enter kennel number of the animal u want to inquire about: 1
+Name: Kiloz, Age: 5, Type: Dog, Breed: Pitbull
+||
+
+
+account ={
+    'account holder' : 'Grace',
+    'balance' : 100000,
+    'Type' : 'Savings'
+}
+
+#adding into
+account['Residence']='JHB'
+print(account)
+
+#modifying existing info
+account['balance'] = input('Enter ur current balance:')
+#deleteing
+del account['Residence']
+print(account)
+
+||{'account holder': 'Grace', 'balance': 100000, 'Type': 'Savings', 'Residence': 'JHB'}
+Enter ur current balance: 100
+{'account holder': 'Grace', 'balance': '100', 'Type': 'Savings'}
+||
+
+
+
+contacts={
+    'Jamie' : '065 365 9878',
+    'Samie' : '064 865 3535',
+    'Katie' : '058 753 9515'
+}
+print(contacts)
+
+||{'Jamie': '065 365 9878', 'Samie': '064 865 3535', 'Katie': '058 753 9515'}||
+
+
+
+contact = {}
+while True:
+    print('\n _-_-_-_-CONTACT BOOK-_-_-_-_')
+    print('1. Add Contact ,\n 2. Search Contact ,\n 3. View All ,\n 4. Delete contact ,\n 5. Exit')
+
+||
+ _-_-_-_-CONTACT BOOK-_-_-_-_
+1. Add Contact ,
+ 2. Search Contact ,
+ 3. View All ,
+ 4. Delete contact ,
+ 5. Exit||#loops forever
+
+
+
+try:
+    number = int(input('Enter a number:'))
+    result = 10/number
+    print(f'Result : {result}')
+except ValueError:
+    print('Thats not a valid number,enter an integer.')
+except ZeroDivisionError:
+    print('Cannot divide by zero')
+
+||Enter a number: 5
+Result : 2.0
+||
+
+
+user_age=int(input('Enter your age:'))
+if user_age <= 13:
+    print('You are a child.Play around while u can.')
+elif user_age <= 20:
+    print('You are a teenage,Dont let other people define ur lifestyle.')
+else:
+    print ('you are an adult,Enjoy every last moment')
+
+||Enter your age: 200
+you are an adult,Enjoy every last moment
+||
+
+
+
+user_number=int(input('Enter a number:'))
+if user_number >0:
+    print('You have entered a negative number.')
+elif user_number == 0:
+    print('You have entered zero.')
+else:
+    print ('You have entered a negative number.')
+
+||Enter a number: 1
+You have entered a negative number.
+||
+
+
+
+number=int(input('Enter Number between 1-10:'))
+if number <0:
+    print('This is an negative number.')
+elif number == 0:
+    print('This is zero.')
+else :
+    print('This is a positive number.')
+if number % 2 == 0:
+    print('This is an even number')
+else:
+    print("This is an odd number")
+
+
+||Enter Number between 1-10: 10
+This is a positive number.
+This is an even number||
+
+
+
+while True:
+    guess=int(input("Guess a number between 0-200:"))
+    if guess <167:
+        print('number is too low,try again.')
+    elif guess == 167:
+        print('You guessed the number correctly!')
+    else:
+        print('Number is too high,try again')
+
+||Guess a number between 0-200: 1||
+number is too low,try again.
+Guess a number between 0-200: 2
+number is too low,try again.
+Guess a number between 0-200: 200
+Number is too high,try again
+Guess a number between 0-200: 167
+||You guessed the number correctly!||
+
+
+
+#correct
+secret = 7 
+guesses = 0 
+print('Guess a number between 1 and 10')
+while True:
+    guess = int(input('Your guess:'))
+    guesses+=1
+    if guess == secret:
+        print(f"You guessed correctly in {guesses} guesses!")
+        break
+    elif guess < secret:
+        print('Too low! Try again')
+    else:
+        print ('Too high! Try again')
+
+
+||Guess a number between 1 and 10
+Your guess: 0
+Too low! Try again
+Your guess: 0
+Too low! Try again
+Your guess: 0
+Too low! Try again
+Your guess: 0
+Too low! Try again
+Your guess: 7
+You guessed correctly in 5 guesses!
+||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

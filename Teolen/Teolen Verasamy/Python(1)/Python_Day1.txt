@@ -1,0 +1,138 @@
+Python_Day1
+
+print('Helloo')  #outputs Helloo
+
+item1 = 600
+item2 = 900
+results = item1 + item2
+print(results)  #outputs 1500
+
+#selling price   discount    anmount after discount
+selling_price =float(input('Enter Selling Price: '))
+discount =float(input('Enter discount Amount: '))
+amount_after_discount = selling_price - discount 
+
+print('Amount After Discount: ',amount_after_discount)# 100,25=990
+
+
+#Quantity      unit price       Total Price
+#      4         75                 x
+
+Quantity =int(input('Enter amount of items: '))
+Unit_price =float(input('Enter price of item: '))
+
+Total_price = Unit_price * Quantity
+
+print('Quantity:',Quantity)
+print('Unit Price:',Unit_price)
+print('Total Price:',Total_price)
+#outputs Enter amount of items:  4
+		Enter price of item:  75
+		Quantity: 4
+		Unit Price: 75.0
+		Total Price: 300.0
+
+
+#total cost       unit     average=tc/tu
+
+total_cost=float(input('Enter Total Cost Amount:'))
+unit=int(input('Enter Unit Amount:'))
+average_unit_cost= total_cost/unit
+print(f'Average cost :{average_unit_cost}')
+#outputs Enter Total Cost Amount: 300
+		Enter Unit Amount: 4
+		Average cost :75.0
+
+
+print(f'Quantity:{Quantity}')
+print(f'Unit Price:{average_unit_cost}')
+print(f'Total Price:{Total_price}')
+#outputs Quantity:4
+		Unit Price:75.0
+		Total Price:300.0
+
+
+
+# f-string use variable 'name' print my name is teo
+name='Teolen'
+print(f'My name is {name}')
+#outputs My name is Teolen
+
+
+#floor division (munber of full boxes for shipping) total items 10000     box capcity 12    full boxes print
+total_items=int(input('Total Items:'))
+box_capacity=12
+full_boxes=total_items//box_capacity
+print(f'Full boxes: {full_boxes}')
+remaining_items=(total_items%box_capacity)
+print(f'Remaining: {remaining_items}')
+#outputs Total Items: 10000
+		Full boxes: 833
+
+
+#Exponentitation ** Simple Compound intrest p amount rate  year future value p*(1.05)^year   p=1000  year=2
+p=float(input('Enter Principle amount:'))
+rate=float(input('Enter Rate amount:'))
+
+year=float(input('Enter years:'))
+Total_balance=(p*(rate)**2.)
+
+print(f'Principle Amount: {p}')
+print (f'Interest Rate: {rate}\n{year} year period')
+print(f'The Accumulated Amount: {Total_balance}')
+#outputs Enter Principle amount: 1000
+		Enter Rate amount: 1.05
+		Enter years: 2
+		Principle Amount: 1000.0
+		Interest Rate: 1.05
+		2.0 year period
+		The Accumulated Amount: 1102.5
+
+
+
+x= 100
+y= 50
+print(x<y)
+#Outputs False
+
+a = False
+b = True
+c = True
+print(c and b)
+#output True
+
+
+#approve an invoice (bool function)
+invoice_approved= True
+customer_active=False
+print(invoice_approved and customer_active)
+#False
+
+
+
+expense1=int(input('Enter Price:'))
+expense2=int(input('Enter Price:'))
+total_expense=expense1+expense2
+print(f'Total Expenses: {total_expense}')
+#output Enter Price: 10000
+		Enter Price: 1000
+		Total Expenses: 11000
+
+
+
+burgers=int(input('Amount of burgers:'))
+total_price=float(input('Total Price:'))
+single_price=total_price/burgers
+print(f'Singular Price: {single_price}')
+#output Amount of burgers: 5
+		Total Price: 50
+		Singular Price: 10.0
+
+
+
+username=input('Enter Username:')
+password=int(input('Enter Password:'))
+if password==123 and username=='Anthony':
+    print('Login successful!')
+else:
+    print('Incorrect details entered...')

@@ -1,0 +1,108 @@
+Machine_Learning_Regression
+
+
+
+import pandas as pd
+from matplotlib import pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+
+#load dataset
+df = pd.read_csv(r'C:\Users\tvera\Downloads\employee_salary_dataset.csv')
+
+# show first 5 rows
+df.head()
+
+||
+Experience_Years	Trainings_Completed	Age	Salary
+0	6	7	44	26386.89
+1	3	1	43	13696.15
+2	12	4	32	33655.75
+3	14	4	26	38177.61
+4	10	5	55	34344.67
+||
+
+
+
+#explore data
+df.shape      #dataset size
+df.describe() #summaary stats
+
+
+Experience_Years	Trainings_Completed	Age	Salary
+count	200.000000	200.000000	200.000000	200.000000
+mean	7.720000	4.725000	40.430000	28857.674250
+std	4.431681	2.663616	11.243987	11531.501182
+min	0.000000	1.000000	20.000000	-1371.690000
+25%	4.000000	2.000000	31.000000	20930.947500
+50%	8.000000	4.500000	41.500000	29145.305000
+75%	11.000000	7.000000	50.250000	38431.737500
+max	15.000000	9.000000	59.000000	57253.430000
+
+
+
+#check missing values
+df.isnull().sum()
+
+||Experience_Years       0
+Trainings_Completed    0
+Age                    0
+Salary                 0
+dtype: int64
+||
+
+
+
+plt.hist(df['Salary'], bins=35)
+plt.title('Salary distribution')
+plt.xlabel('Salaries')
+plt.ylabel('Frequency')
+plt.show()
+
+
+#selecting dependant y and independent x 
+X = df[['Experience_Years', 'Trainings_Completed', 'Age']]
+Y = df['Salary']
+
+
+#split data into training and testing
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2, random_state = 42)
+
+
+# Train regression model
+model = LinearRegression()
+model.fit(X_train, Y_train)
+
+
+#predicting using model
+Y_pred = model.predict(X_test)
+
+
+#evaluation of the model
+mae = mean_absolute_error(Y_test, Y_pred)
+mse = mean_squared_error(Y_test, Y_pred)
+r2 = r2_score(Y_test, Y_pred)
+mae, mse, r2
+# an r2 of 1 meanss perfect ,+0.8 = great, 0.5 to 0.7 okay finally less the 0.5c
+
+
+||(2554.9452897194824, 9432699.176755361, 0.9220463107411718)||
+
+
+#cheack model coeefiecent for interpretation
+model.coef_, model.intercept_, 
+
+
+||(array([2518.09324749, 1169.03006933,  105.38625319]),
+ np.float64(-304.31331375868103))
+||
+
+
+# make a real prediction using the model
+sample = [[5, 3, 30]]
+model.predict(sample)
+
+
+||array([18954.83072741])||

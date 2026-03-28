@@ -1,0 +1,41 @@
+Python_Day3
+
+car1=float(input("Enter price of 1st car:"))
+car2=float(input('Enter price of 1st car:'))
+if car1>car2:
+    print(f'Car 1 is more expensive being priced at {car1}')
+else:
+    print(f'Car 2 is more expensive being priced at {car2}')
+
+||Enter price of 1st car: 10000
+Enter price of 1st car: 1000
+Car 1 is more expensive being priced at 10000.0||
+
+
+#seta grading system
+#mark using input method          condition         what needs to happen         else         (m>50 competent, less then NYC)
+
+mark1=float(input('Enter mark of User:'))
+if mark1>50:
+     print(f'Your mark is {mark} and therefore is competent.')
+else:
+     print(f'Your mark is {mark1} and therefore you are not yet competent.')
+
+||Enter mark of User: 69
+Competent.||
+
+
+marks =int(input('Enter Mark:'))
+if marks>=75:
+    print('Pass with a distinction')
+elif marks>=60:
+    print('Pass with Merit')
+elif marks>=50:
+    print('Pass')
+elif marks>=40:
+    print('Supplimetery Pass')
+else:
+    print('Fail')
+
+||Enter Mark: 25
+Fail||

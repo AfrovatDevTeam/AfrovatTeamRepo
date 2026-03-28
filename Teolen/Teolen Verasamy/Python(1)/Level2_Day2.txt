@@ -1,0 +1,416 @@
+Level2_Day2
+
+
+
+#scatter plot and regression line
+import numpy as np
+import matplotlib.pyplot as plt
+data1 = [1,2,3,4]
+data2 = [11,22,33,44]
+
+#
+m,b = np.polyfit(data1, data2, 1)
+#creating a line across a range
+x_line = np.linspace(min(data1), max(data1), 100)
+y_line = m*x_line+b
+#ploting regression line
+plt.plot(x_line, y_line ,color = 'purple', label = f"Line:y={m:.2f}x + {b:.2f}")
+#
+
+plt.scatter(data1, data2, color = 'magenta')
+plt.legend()
+
+plt.title('Data')
+plt.xlabel('data1')
+plt.ylabel('data2')
+plt.show
+
+
+
+
+
+
+#OOP basic class template
+class Produce:
+    #constructor
+    def __init__(self, corn, wheat):
+        self.corn = corn
+        self.wheat = wheat
+    def instant_method(self):
+        return f'There is {self.corn} amount of corn and there is {self.wheat} amount of wheat'
+obj = Produce(100, 125)
+print(obj.instant_method())
+
+||There is 100 amount of corn and there is 125 amount of wheat||
+
+
+
+#class returning details of products
+class Clothing:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+    def label(self):
+        return f'{self.name}-R{self.price}'
+obj = Clothing('Leather Jacket', 250)
+print(obj.label())
+
+||Leather Jacket-R250||
+
+
+class Cars:
+    def __init__(self, model, price):
+        self.model = model
+        self.price = price
+    def label(self):
+        return f'{self.model}-R{self.price}'
+Vehicle = Cars('Ford,Mustang', 10000)
+print(Vehicle.label())
+
+
+||Ford,Mustang-R10000||
+
+
+
+#calculate total price (name,price,qntbought)
+class furniture:
+    def __init__(self, name, price, quantity_bought):
+        self.name = name
+        self.price = price
+        self.quantity_bought = quantity_bought
+    def label(self):
+        return f"{self.name}-R{self.price}"
+    def total_price(self):
+        return self.price*self.quantity_bought
+s = furniture('Stools', 200, 5) 
+print(s.label())
+print("Quantity:",s.quantity_bought)
+print("Total Sales:",s.total_price())
+
+||Stools-R200
+Quantity: 5
+Total Sales: 1000||
+
+
+
+class sweets:
+    def __init__(self, brand, price, bought):
+        self.brand = brand
+        self.price = price
+        self.bought = bought
+    def label(self):
+        return f"{self.brand}-R{self.price}"
+    def total(self):
+        return f'\nSales Quantity:{self.bought}\nTotal Sales:{self.price*self.bought}'
+c = sweets("canbury", 50,30)
+print(c.label(), c.total())
+
+||canbury-R50 
+Sales Quantity:30
+Total Sales:1500||
+
+
+
+class bankaaccount:
+    def __init__(self, holder, balance = 0):
+        self.holder = holder
+        self.balance = balance
+    def deposit(self,deposit):
+        self.balance += deposit
+        return  self.balance
+holder = input('Enter Name:')
+obj = bankaaccount(holder)
+deposit = float(input('Enter amount you want to deposit:'))
+balance = obj.deposit(deposit)
+
+print(obj.holder,(f'\nBalance: R'),balance)
+
+||Enter Name: mark
+Enter amount you want to deposit: 1000
+mark 
+Balance: R 1000.0||
+
+
+
+class customer:
+    def __init__(self, name, balance = 100):
+        self.name = name
+        self.balance = balance
+    def display(self):
+        return f"Name:{self.name},Balance:{self.balance}"
+c = customer('Peter',3000)
+print(c.display())
+
+||Name:Peter,Balance:3000||
+
+
+
+class student:
+    def __init__ (self, name, score):
+        self.name = name
+        self.score = score
+s1 = student('Jason',30)
+s2 = student('Shelly',100)
+s3 = student('Jake', 70)
+print(s1.name,s1.score,'%')
+
+||
+Jason 30 %||
+
+
+
+class students:
+    count = 0
+    def __init__(self, name):
+       self.name = name
+       students.count += 1
+s1 = students('Bob')
+s2 =  students('Alice')
+print('The number of students is',students.count)
+
+||The number of students is 2||
+
+
+
+
+class Employee:
+    company = 'Lenovo'
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+e1 = Employee("Dian",5000000)
+print(e1.company,e1.name,e1.salary)
+
+
+||Lenovo Dian 5000000|||
+
+
+
+#class Bankaccount d3efault para for balance,owner,deposit ammount
+class bankaccount:
+    def __init__(self, holder, balance = 10):
+        self.holder = holder
+        self.balance = balance
+    def label(self):
+        return f"\n{self.holder}\nBalance: R{self.balance}"
+    def deposit(self):
+        deposit_amount = self.balance + self.
+        return f"\nDeposit Amount:{self.deposit_amount} \nNew Balance:{self.deposit_ammount+self.balance}"
+b = bankaccount("Mr Danforth")
+print(b.label(), b.deposit(100))
+
+
+
+# corrected code
+
+#class Bankaccount with default parameters for balance, owner, deposit amount
+class bankaccount:
+    def __init__(self, holder, balance=10):  # Fixed: added comma between self and holder
+        self.holder = holder
+        self.balance = balance
+    
+    def label(self):
+        return f"\n{self.holder}\nBalance: R{self.balance}"
+    
+    def deposit(self, deposit_amount):  # Fixed: added parameter to accept deposit amount
+        self.balance += deposit_amount  # Update the balance
+        return f"\nDeposit Amount: R{deposit_amount} \nNew Balance: R{self.balance}"
+
+b = bankaccount("Mr Danforth")
+print(b.label(), b.deposit(100))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

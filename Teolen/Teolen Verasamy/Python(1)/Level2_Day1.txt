@@ -1,0 +1,320 @@
+Level2_Day1
+
+
+#lambda 
+add=lambda a=34 ,b=78: a+b
+print(add())
+
+||112||
+
+
+rice : price*1.05
+print (cal_price(100))#in()is price of product
+
+||105.0||
+
+
+
+#CONVERSION currency euro to rand 1e to R19,23
+euro_to_zar = lambda euro: euro*19.23
+print(euro_to_zar(int(input("Enter amount you wish to convert:"))))
+
+||Enter amount you wish to convert: 100
+1923.0||
+
+
+current_rate =float(input('Enter the current rate:'))
+us_to_zar = lambda current_rate: current_rate*16
+print(us_to_zar(current_rate))
+
+
+||Enter the current rate: 16
+256.0||
+
+
+
+#give 10% discount on a product
+discount = lambda price: price - (price*10/100)
+print(discount(120))
+
+||108.0||
+
+
+#lambda function returns last digit of a number
+last_dig = lambda dig : dig%10
+print(last_dig(76))
+
+||6||
+
+
+
+#map function, iterable
+num = [1,2,3,4,5]
+results = list (map(lambda x: x*2, num))
+print(results)
+
+for x in num:
+    print(x)
+
+||[2, 4, 6, 8, 10]
+1
+2
+3
+4
+5
+||
+
+
+
+#add vat (15%) to each price ;iterable:(does a function to every number in a list)
+prices = [1200,900,80,90]
+add_vat = list (map(lambda price: price*1.05, prices))#map=iterable
+print(add_vat)
+
+||[1260.0, 945.0, 84.0, 94.5]||
+
+
+
+places = ["new-york", "japan"]
+capitalize = list(map(lambda n: n.upper(),places))
+print(capitalize)
+
+||['NEW-YORK', 'JAPAN']||
+
+
+apple = 'seeds'
+len(apple)
+
+||5||
+
+
+
+#map function of getiing len of each wrd in a list
+pets= ['Kiloz', 'Golze', 'Lola']
+length = list(map(lambda x: len(x), pets))
+print(length)
+
+||[5, 5, 4]||
+
+
+
+
+#map function that will add two lists item by item
+queue = [1,20,53,10]
+age = [52,23,79,19]
+add = list(map(lambda x,y: x +y ,age , queue))
+print(add)
+
+||[53, 43, 132, 29]||
+
+
+
+
+male = [100, 100, 100]
+female = [1000, 1000, 1000]
+total_pop = list(map(lambda x,y: x+y ,male ,female))
+print(total_pop)
+
+||[1100, 1100, 1100]||
+
+
+
+
+#filter (function, iterable)
+num = [1,59,58,62,354,87,2]
+even =list(filter(lambda x: x%2==0,num))
+print(even)
+
+||[58, 62, 354, 2]||
+
+
+
+games = ['RE9','Fallout-3','Red-dead']
+longer = list(filter(lambda x : len(x)>3,games))
+print(longer)
+
+||['Fallout-3', 'Red-dead']||
+
+
+
+words = ['apples', '','banana','','kiwi']
+#filter empty
+null = list(filter(lambda x : len(x)>0,words))
+print(null)
+
+
+||['apples', 'banana', 'kiwi']||
+
+
+
+
+
+#modules
+import calendar
+year = int(input('Enter a year:'))
+print(calendar.TextCalendar().formatyear(year))
+
+ ||#prints calendar||
+
+
+
+
+import math
+#pi,sqaure roots, powers,trigonometry
+print(math.sqrt(9))
+print(math.pi)
+
+||3.0
+3.141592653589793||
+
+
+
+#random
+import random
+number = random.randint(1,20)
+
+while guess: 
+    guess =int(input('Guess a number between 1 and 10:'))
+    if guess > number:
+       print('number too high')
+    elif guess < number :
+       print('number too low')
+    elif guess == number :
+       print('correctly guessed')
+    else :
+       print('invaild')
+break
+ 
+
+||Guess a number between 1 and 10: 2
+correctly guessed||
+
+
+
+import statistics as stats
+num = [10,20,30,4,4,50,60,70,80,90]
+print(stats.median(num))
+print(stats.mean(num))
+print(stats.mode(num))
+
+||40.0
+41.8
+4||
+
+
+from datetime import datetime, timedelta  #package module
+now = datetime.now()
+print(now.strftime('%y-%m-%d %H:%M'))
+print(now+timedelta(days=7))
+
+||26-03-16 14:24
+2026-03-23 14:24:56.054348||
+
+
+
+#json
+import json
+data = {'name':'Alice', 'Age': 25}
+s = json.dumps(data)
+print(s)
+
+
+||{"name": "Alice", "Age": 25}||
+
+
+
+price = [500,600,700,800,900]
+sales2026 = [100,100,200,350,900]
+sales = [50,90,150,260,800]
+import pandas as pd
+from matplotlib import pyplot as plt
+plt.plot(sales, price)
+plt.plot(sales2026, price)
+plt.xlabel("Sales")
+plt.ylabel('Price')
+plt.legend(["Sales 2020","Sales 2026"])
+plt.title('Sales vs Price trend in 2020 and 2026')
+plt.show()
+
+
+
+
+
+languages = ['PHP', 'C#','Python','Java']
+students = [100, 120, 150,200]
+plt.bar(languages,students, width = 0.50 , color = "pink")
+plt.title('Students Registered for programming')
+plt.xlabel('Languages')
+plt.ylabel('Students')
+plt.show()
+
+
+
+
+
+plt.pie(students, labels = languages ,autopct="%1.1f%%",)
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,221 @@
+Python_Day4
+
+
+#banking system while loop
+correct_pin = "1234"
+entered_pin = input("Enter Password:")
+while entered_pin != correct_pin:
+    print('Inncorrect Password!Please try again.')
+    entered_pin = input("Enter Password:")
+print("Password accepted")
+
+||Enter Password: 020
+Inncorrect Password!Please try again.
+Enter Password: 1234
+Password accepted||
+
+
+#validate user input ;   quantity  (input())  while qw is <= print quantity cannot be zero or negative   give user another chance    else
+#print Quantity saved  display quantity
+quantity_input = int(input("Enter quantity amount:"))
+while quantity_input <=0:
+    print('Quantity cannot be 0 or negative.Try again.')
+    quantity_input = int(input("Enter quantity amount:"))
+print(f'Quantity amount updated.Current quantity is {quantity_input}')
+    
+||Enter quantity amount: 0
+Quantity cannot be 0 or negative.Try again.
+Enter quantity amount: 200
+Quantity amount updated.Current quantity is 200||
+
+
+petrol_inliters = 6
+while petrol_inliters >0:
+    print(f'Petrol is being used,{petrol_inliters} liters is left')
+    petrol_inliters -= 1
+    print('Petrol has depleted ,refill needed')
+
+||Petrol is being used,6 liters is left
+Petrol has depleted ,refill needed
+Petrol is being used,5 liters is left
+Petrol has depleted ,refill needed
+Petrol is being used,4 liters is left
+Petrol has depleted ,refill needed
+Petrol is being used,3 liters is left
+Petrol has depleted ,refill needed
+Petrol is being used,2 liters is left
+Petrol has depleted ,refill needed
+Petrol is being used,1 liters is left
+Petrol has depleted ,refill needed
+||
+
+
+#uber copycat
+destination = input("Where do u want to cab to?:")
+cab_found = False
+while not cab_found:
+    print('Searching for a Cab...')
+
+    userinput = input('Have you found a cab? (yes/no)')
+    if userinput == 'yes':
+       cab_found = True
+print(f"Driver is on the way to {destination}")
+
+||Where do u want to cab to?: lol
+Searching for a Cab...
+Have you found a cab? (yes/no) yes
+Driver is on the way to lol
+||
+
+
+Clothing= ['Pants','Shirts','Dresses','Shoes']
+#accessing elements(index)
+print(Clothing[2])
+print(Clothing[-1])
+
+||Dresses
+Shoes||
+
+
+#SLICING  get three cars for adudit
+Cars=['Ford','Mustang','Kia','VW','BUGATTI','Renault']
+print(Cars[0:2])
+print(Cars[2:4])
+print(Cars[4:6])
+#reverse list
+print(Cars[::-1])
+
+||['Ford', 'Mustang']
+['Kia', 'VW']
+['BUGATTI', 'Renault']
+['Renault', 'BUGATTI', 'VW', 'Kia', 'Mustang', 'Ford']
+||
+
+
+ingredents = ['Buns','lettuce','Tomatoes','Gerkins']
+#add to the list
+while ingredents:
+    ingredents.append(input("Enter a new ingredent"))
+    for i in ingredents:
+         print (i)
+
+||Enter a new ingredent onions
+Buns
+lettuce
+Tomatoes
+Gerkins
+onions||
+
+
+#insertiong into a specfic place
+print(ingredents)
+ingredents.remove("l")
+print (ingredents)
+ingredents.sort
+print(ingredents)
+
+||['Buns', 'lettuce', 'Tomatoes', 'Gerkins', 'l']
+['Buns', 'lettuce', 'Tomatoes', 'Gerkins']
+['Buns', 'lettuce', 'Tomatoes', 'Gerkins']
+||
+
+
+#count
+print('Number of ingredents are', len(ingredents))
+# OR
+length = len(ingredents)
+print(f"You have {length} ingredents left")
+
+||Number of ingredents are 4
+You have 4 ingredents left||
+
+
+#scenario
+pets = ['cat','dog','snake']
+pets.append("turtle")
+pets.insert(1, "hamster")
+pets.remove("snake")
+print(pets)
+print('The amount of pets is', len(pets))
+
+||['cat', 'hamster', 'dog', 'turtle']
+The amount of pets is 4||
+
+
+#function
+def Feed (pet_names,animal):
+    print(f"Feeding the {animal}, {pet_names}")
+Feed ('Kiloz','Pitbull')
+
+||Feeding the Pitbull, Kiloz||
+
+
+def dinosaurs_population(sinosaurs,anklosaurous):
+    return sinosaurs+anklosaurous
+totalpopulation=(1000+1500)
+print(f"the total population is {totalpopulation}")
+                    
+||the total population is 2500||
+
+
+#function to book a  bus tour
+def bus_tour(distance,price):
+    return distance*price
+totaled_price= bus_tour(100,150)
+print(f"The total price is R{totaled_price}")
+
+||The total price is R15000||
+
+
+#function that calculates balance
+#2 parameters (deposit withdrawal)
+def balance(deposit,withdrawal):
+    return withdrawal-deposit
+total_balance=balance(10000,int(input("How much do u want to withdraw:")))
+print(f"Your new balance is R{total_balance}")
+
+||How much do u want to withdraw: 100
+Your new balance is R-9900||
+
+
+#grading system
+mark = int(input("Enter your mark:"))
+def grade(mark):
+    if user_mark >= 75:
+       return 'Distinction'
+    elif mark >= 50:
+       return 'Pass'
+    else:
+       return 'Fail'
+results = grade(mark)
+print(f'Grade is {mark}% {results}')
+
+||Enter your mark: 76
+Grade is 76% Pass||
+
+
+#messaging system
+# take one per name         return message    hello {name}, Your order is ready for collection.
+order_num=int(input("Enter Reference number:"))
+if order_num == 100:
+    name = 'Kyle'
+elif order_num == 167:
+    name = 'Grace'
+def mes(name):
+    return name
+print(f'Hello {name}, your order is ready to be collected')
+
+||
+Enter Reference number: 100
+Hello Kyle, your order is ready to be collected||
+
+
+#courier delivery time  d /s =t
+
+
+def delivery(distance,speed):
+    return distance/speed
+time=(delivery(60,80))
+print(f'Your delivery will arrive at {time}')
+
+||Your delivery will arrive at 0.75||
