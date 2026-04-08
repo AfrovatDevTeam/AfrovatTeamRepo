@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Counter Dashboard</h1>
+
+<div class="container">
+
+    <!-- Counter 1 -->
+    <div class="counter-box">
+        <h2>Counter 1</h2>
+        <p id="counter1">0</p>
+
+        <button onclick="increase1()">Increase</button>
+        <button onclick="decrease1()">Decrease</button>
+    </div>
+
+    <!-- Counter 2 -->
+    <div class="counter-box">
+        <h2>Counter 2</h2>
+        <p id="counter2">0</p>
+
+        <button onclick="increase2()">Increase</button>
+        <button onclick="decrease2()">Decrease</button>
+    </div>
+
+    <!-- Counter 3 -->
+    <div class="counter-box">
+        <h2>Counter 3</h2>
+        <p id="counter3">0</p>
+
+        <button onclick="increase3()">Increase</button>
+        <button onclick="decrease3()">Decrease</button>
+    </div>
+
+</div>
+
+<h2>Total Sum: <span id="total">0</span></h2>
+
+<h2>Highest Counter: <span id="highest">None</span></h2>
+
+<button class="reset" onclick="resetCounters()">Reset All</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
