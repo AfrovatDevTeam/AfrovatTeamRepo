@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Catch the Ball Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>“Catch the ball” 🎈</h1>
+<p>“Woohoo! Catcha da ball before doggy does!”</p>
+
+<div class="game-area">
+  <img src="minions.jpg" class="background">
+  <div class="ball"></div>
+  <div class="dog">🐕</div>
+</div>
+
+<!-- Fancy Buttons -->
+<div class="buttons">
+  <button class="btn play">▶ Play</button>
+  <button class="btn pause">⏸ Pause</button>
+  <button class="btn close">✖ Close</button>
+</div>
+
+</body>
+</html>

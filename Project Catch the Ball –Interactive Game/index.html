@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Catch the Ball Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Catch the Ball 🎈</h1>
+<p>Woohoo! Catcha da ball before doggy does!</p>
+
+<div class="game-area">
+
+<img src="minions.jpg" class="background">
+
+<div class="ball"></div>
+
+<div class="dog">🐕</div>
+
+</div>
+
+<div class="buttons">
+
+<button id="playBtn" class="btn play">▶ Play</button>
+
+<button id="pauseBtn" class="btn pause">⏸ Pause</button>
+
+<button id="closeBtn" class="btn close">✖ Close</button>
+
+<button id="openBtn" class="btn open">🔄 Open Game</button>
+
+</div>
+
+<script>
+
+const ball = document.querySelector(".ball");
+const dog = document.querySelector(".dog");
+const gameArea = document.querySelector(".game-area");
+
+const playBtn = document.getElementById("playBtn");
+const pauseBtn = document.getElementById("pauseBtn");
+const closeBtn = document.getElementById("closeBtn");
+const openBtn = document.getElementById("openBtn");
+
+playBtn.onclick = function(){
+
+ball.style.animationPlayState = "running";
+dog.style.animationPlayState = "running";
+
+};
+
+pauseBtn.onclick = function(){
+
+ball.style.animationPlayState = "paused";
+dog.style.animationPlayState = "paused";
+
+};
+
+closeBtn.onclick = function(){
+
+gameArea.style.display = "none";
+
+};
+
+openBtn.onclick = function(){
+
+gameArea.style.display = "block";
+
+};
+
+</script>
+
+</body>
+
+</html>
