@@ -1,0 +1,52 @@
+ body {
+            font-family: 'Clicker Script', cursive;
+            font-size: 24px;
+            font-size: 48px;
+            color: cornflowerblue;  
+            background-image: url(./paws.jpg);
+            padding: 20px;
+        }
+        p{
+           
+        }
+        h1 {
+            font-size: 48px;
+            color:cornflowerblue;
+        }
+        h3{
+            font-size: 48px;
+            color:cornflowerblue;
+        }
+        h4{
+            font-size: 48px;
+            color: cornflowerblue; 
+        }
+        h5{
+             font-size: 48px;
+            color: cornflowerblue;
+        }
+        header {
+            font-size: 48px;
+            color:cornflowerblue;
+        }
+        ul{
+            font-size: 48px;
+            color:cornflowerblue;
+        }
+        li{
+            font-size: 48px;
+            color:cornflowerblue;
+        }
+        footer{
+            font-size: 48px;
+            color:cornflowerblue;
+        }
+        a{
+            font-size: 48px;
+            color:cornflowerblue;
+        }
+        .title {
+            text-align: center;
+        }
+ 
+        

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Hades Tour</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Load Clicker Script from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply Clicker Script font */
+        body {
+            font-family: 'Clicker Script', cursive;
+            font-size: 24px;
+            background-color: #dfad98;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="c:\Users\tvera\Downloads\hades.webp">
+        <h1>Melanie Martinez Hades Tour</h1><br>
+        
+       
+        <h4><li>Websites</li></h4>
+            <ul>
+                <nav> <!--listing links in a unordered list--->
+                <li><a href="https://music.apple.com/us/artist/melanie-martinez/993014053">Music</a></li>
+                <li><a href="https://www.melaniemartinezmusic.com/">Home Page</a></li>
+                <li><a href="https://store.melaniemartinezmusic.com/collections/hades" target="_blank">Merch</a></li>
+                <li><a href="mailto:c1rlc3@hadez.com">Email</a> <a href="tel:+123456789">Phone</a></li>
+                <li><a href="C:\Users\tvera\OneDrive\Desktop\HTML\complaints.html">Complaints</a></nav></li>
+            </ul>
+        
+        </header>
+    <section><!--making lists within a list-->
+       <br> <h2><ol>Tour Dates</h2><ul>
+            <b><u><li>London-31 March 2026-2 April 2026</li></u></b>
+                <ul>
+                <li>31 March at 15:00</li>
+                <li>1 April at 15:00</li>
+                <li>2 April at 15:00</li><br>
+                </ul>
+            <b><u><li>Amsterdam-3 April 2026-5 April 2026</li></u></b>
+                <ul>
+                <li>3 April at 16:00</li>
+                <li>4 April at 16:00</li>
+                <li>5 April at 16:00</li><br>
+                </ul>
+            <b><u><li>Australia-6 April 2026-8 April 2026</li></u></b>
+                <ul>
+                <li>6 April at at 17:00</li>
+                <li>7 April at at 17:00</li>
+                <li>8 April at at 17:00</li><br>
+            </ul>
+           <b><u><li>Cape Town-9 April 2026-11 April 2026</li></u></b>
+                <ul>
+                <li>9 April at at 18:00</li>
+                <li>10 April at at 18:00</li>
+                <li>11 April at at 18:00</li><br>
+            </ul>
+            <b><u><li>Pretoria-12 April 2026-14 April</li></u></b>
+                 <ul>
+                <li>12 April at at 19:00</li>
+                <li>13 April at at 19:00</li>
+                <li>14 April at at 19:00</li><br>
+            </ul>
+            <br><iframe 
+        id="Preformance"
+        title="Melanie Martinez Latest"
+        width="560"
+        height="315"        
+        src="https://www.youtube.com/embed/v742oCBECdQ?si=XEuqbdWGlFPBNxRC" title="YouTube video player" frameborder="0" allow="autoplay" allowfullscreen></iframe>">
+   </iframe><br>
+   <!--Adding a image-->
+            <img src="c:\Users\tvera\Downloads\stage.jpg" width="400px"><br>
+            <!--creating a tabel-->
+            <table border="1">
+    <tr><!--table row *defines a row in a table-->
+        <th>Seat Type</th><!--table header *indicates that it is the naming row-->
+                <th>Price</th>
+        <th>Placement</th>
+
+    </tr>
+    <tr>
+        <td>Basic</td><!--table data *defines data in a cell -->
+                <td>R850</td>
+        <td>Middle Floor</td>
+
+    </tr>
+    <tr> 
+        <td>Superb</td>
+            <td>R1250</td>
+        <td>Level 1 Sidelines</td>
+    </tr>
+    <tr>
+        <td>VIP</td>
+            <td>R1850</td>
+        <td>Level 2 Sidelines</td>
+
+    </tr>
+</table><br>
+        <form action="newPage.html" method="get"><!--makes a form to gain infor or user input-->
+            <fieldset>
+                <b><legend>Tickets Available Now</legend></b>
+                <div>
+                   <b><u><label for="name">First Name</label></u></b>
+                    <input type="text" id="name" name="First Name" placeholder="First Name"><!--adds a textbox-->
+                    <b><u><label for="surname">Surname</label></u></b>
+                    <input type="text" id="surname" name="Surname" placeholder="Surname"><br>
+                    <b><u><label for="date of birth">Date Of Birth</label></u></b>
+                    <input type="date" id="date of birth" name="Date of Birth"><br><!--adds a dat selector-->
+                   <div><u><b><label for="seat type">Seat Type</label></b></u><br>
+                   <label for="Basic">Basic</label>
+                   <input type="radio"  name="seat type" value="Basic seat"><!--adds a radio button-->
+                   <label for="Superb">Superb</label>
+                   <input type="radio" name="seat type" value="checked off">
+                    <label for="VIP">Vip</label>
+                    <input type="radio" name="seat type" value="checked off"></div>
+                   <br><fieldset><!--adds a seperate block for specified input within the set-->
+                    <u><b><legend>Payment Type</legend></b></u><br>
+                    <label for="card">Add Card</label>
+                    <input type="radio" name="payment" value="card">
+                    <label for="eft">EFT</label>
+                    <input type="radio" name="payment" value="eft">
+                    <label for="paypal">Paypal</label>
+                    <input type="radio" name="payment" value="paypal">
+                   </fieldset> 
+                   <input type="submit" id="Pay" name="Pay"><!--adds a button to submit data-->
+                   
+                
+                </div>
+            </fieldset>
+        </form>
+    <footer>
+        <br><sub>This Website is protected under copyright laws</sub>
+</body>
+ 
+</html>

@@ -1,0 +1,15 @@
+p.underline {
+ /* draws a 1px line below the text at the baseline */
+ text-decoration: underline;
+}
+p.line-through {
+ /* draws a 1px line across the text in the middle */
+ text-decoration: line-through;
+}
+p.overline {
+ /* draws a 1px line above the text at the top */
+ text-decoration: overline;
+}
+p.Verdana {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}

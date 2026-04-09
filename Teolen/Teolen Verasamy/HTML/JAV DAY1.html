@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ron-World Operators Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f8ff;
+    }
+    h2 { color: #2a52be; }
+    h3 { color: #333; margin-top: 20px; }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input[type="number"] { margin-top: 5px; padding: 5px; width: 50px; }
+    input[type="checkbox"] { margin-left: 10px; transform: scale(1.2); }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+      background-color: #2a52be;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    p { margin-top: 10px; font-weight: bold; }
+    .less10{color: red;}
+   
+  </style>
+</head>
+<body> 
+   
+
+    <h2>Number 1:</br>Number 2:</h2>
+
+    <button onclick="One()">Add One</button>
+    <button onclick="minus()">Minus</button>
+    <button onclick="resetFields()">Reset</button>
+<script>
+  let num1=1;
+  let num2=1;
+
+    function One(){
+        num1++ ;
+        num2++ ;
+
+        document.querySelector("h2").innerHTML= 
+        
+        "Number 1 ="+(num1)+"</br>"+
+        "Number 2 ="+(num2);
+
+    }
+    function minus(){
+        num1-- ;
+        num2-- ;
+
+        document.querySelector("h2").innerHTML= 
+
+        "Number 1 ="+(num1)+"</br>"+
+        "Number 2 ="+(num2);
+    }
+    function resetFields(){
+      let num1 =1;
+      let num2 = 1;
+
+      document.querySelector("h2").innerHTML= 
+
+        "Number 1 ="+(num1)+"</br>"+
+        "Number 2 ="+(num2);
+
+    }
+   </script>
+   </form>
+</body>
+</html>
