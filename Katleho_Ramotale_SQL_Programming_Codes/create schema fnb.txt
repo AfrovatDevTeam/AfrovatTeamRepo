@@ -1,0 +1,56 @@
+1.create schema fnb
+
+2.create table fnb.Gauteng
+(
+CustomerID int primary key not null,
+Name varchar(56) not null,
+Surname varchar(56) not null,
+Salary Money not null
+)
+insert into fnb.Gauteng
+values 
+(100, 'Francis', 'Anosike', 5000),
+(200, 'WENDY', 'MESH', 3000),
+(300, 'JOHN', 'WEBS', 6000);
+
+3.select * from fnb.Gauteng
+
+--give me customer names that start with letter F
+select * from fnb.Gauteng where Name like 'F%'
+--give me customer names that end with letter s
+select * from fnb.Gauteng where Name like '%S'
+
+--give me customer numbers that end with 0
+select * from fnb.Gauteng where Name like '%0'
+
+--select all customers with salary between 5000 and 6000
+select * from fnb.Gauteng 
+where Salary between 5000 and 6000
+
+select * from fnb.Gauteng 
+where Salary >= 5000
+
+select * from fnb.Gauteng 
+where Salary <=6000
+
+select * from fnb.Gauteng 
+where Salary <6000
+
+
+select * from fnb.Gauteng 
+where Salary >6000
+
+4.update fnb.Gauteng set Name = 'SARA', Surname = 'Martins', Salary = 1000 
+where CustomerID = 100
+
+
+5.delete from fnb.Gauteng where CustomerID = 100
+
+6.truncate table fnb.Gauteng
+
+7.DROP table fnb.Gauteng
+
+8.Alter table fnb.Gauteng
+add Price int not null
+
+9.

@@ -1,0 +1,116 @@
+create table Finances
+(
+StaffID int primary key not null,
+StaffName varchar(45) not null,
+StaffSurname varchar(45) not null,
+Department varchar(45) not null,
+ItemSold varchar(56) not null,
+Amount money not null,
+Quality int not null
+)
+
+insert into Finances
+values
+(100, 'Selina', 'Gomez', 'IT Department', 'SCREEN', 20000, 1),
+(200, 'Cyril', 'Ramaphosa', 'Military Force', 'Armor', 80000,1),
+(300, 'Fikile', 'Mbalula', 'Librarian', 'Knowledge', 99000,2),
+(400, 'Angie', 'Motshekga', 'Spokesperson', 'Soundsystem', 50000,3),
+(500, 'Katleho', 'Ramotale', 'CEO', 'Building', 75800,5);
+
+select * from Finances
+
+--Total of amount sold--
+select Sum(Amount) from Finances
+
+=324800,00
+
+--Average Sales--
+select AVG(Amount) from Finances
+
+=64960,00
+
+--Maximum Sale made--
+select MAX(Amount) from Finances
+
+=99000,00
+
+--Minimum Sale Made--
+select MIN(Amount) from Finances
+
+=20000,00
+
+
+select COUNT(Quality) from Finances
+
+=5
+
+--Find square root--
+select SQRT(16)
+
+4
+
+--LOG10 CALCULATION--
+select LOG10(20)
+
+=1,301
+
+--Upper and lowecase change on specific row--
+select UPPER(ItemSold) from Finances
+select LOWER(StaffSurname) from Finances
+
+--Total letters in a name--
+select LEN('Ramaphosa') 
+
+=9
+
+--Replacing specific letter in a name--
+select REPLACE('Katleho', 'o', 'a')
+
+--Joining two words together--
+select CONCAT('Katleho', 'Ramotale') as Fullnames
+
+--Separate two words or names--
+select CONCAT('Katleho', ' ', 'Ramotale') as Fullnames
+
+--Add comma in between two names or words--
+select CONCAT('Katleho',', ', 'Ramotale') as Fullnames
+
+--To select a month from given/specific date--
+select MONTH('2026/02/28') as Months
+
+=2
+
+----To select a Year given/specific date--
+select YEAR('2028/12/31') as Years
+
+=2028
+
+--To select Day in given date--
+select DAY('2026/02/04') as Days
+
+=4
+
+--To see Your laptop/system Date--
+select SYSDATETIME() as Result
+
+--To see current Timedate--
+select GETUTCDATE() as Result
+
+--Return Yes if the condition is True, or
+--Return No if the condition is False
+
+select IIF(200>= 10000, 'Yes', 'No') as Result
+
+=No
+
+select IIF(900<= 1000, 'Yes', 'No') as Result
+
+=Yes
+
+select IIF(Amount> 5000, 'Profit', ' Loss') as Result from Finances
+
+=Profit
+Profit
+Profit
+Profit 
+Profit

@@ -1,0 +1,19 @@
+--Auto Increment Constraint formula (Identity (starting number, increement number)
+
+create table Person3
+(
+ID int identity (100,10) primary key not null,
+Name varchar (65) not null,
+Surname varchar (55) not null,
+Email varchar(55) unique not null,
+Age int not null
+)
+
+insert into Person3
+values
+('Katleho', 'Ramotale', 'kramotale@mail.com', 23),
+('Sbusiso', 'Mnguni', 'Msbusiso@gmail.com', 28),
+('Riley', 'Thomson', 'triley@gmail.com', 18),
+('Zane', 'Lewis', 'zane@gmail.com', 23);
+
+select * from Person3

@@ -1,0 +1,22 @@
+create table Product
+ (
+ ID int primary key not null,
+ Name varchar(45) not null,
+ Item varchar(56) not null,
+ Amount money not null,
+ Quantity int not null
+  )
+
+  insert into Product
+  values 
+  (100, 'TV', 'Tv stand', 300, 1),
+  (200, 'shoes', 'collections', 1000, 3),
+  (300, 'cars', 'automobile', 90000, 6),
+  (400, 'laptops', 'computer', 13000, 5);
+
+  --order by is used to sort data in a table either in Asc or Desc
+  select * from Product
+  order by ID desc
+
+
+

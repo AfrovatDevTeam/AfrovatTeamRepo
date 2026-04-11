@@ -1,0 +1,352 @@
+---joins----
+
+
+---Create table actors
+	CREATE TABLE actors (  
+	    actor_id INT PRIMARY KEY,  
+	    actor_name VARCHAR(100),  
+	    movie_id INT  
+	);  
+
+---Insert data into actors
+	INSERT INTO actors (actor_id, actor_name, movie_id) VALUES  
+	(1, 'Vin Diesel', 301),  
+	(2, 'Marilyn Monroe', 302),  
+	(3, 'Alvaro Morte', 303),  
+	(4, 'Rose DeWitt', 304),  
+	(5, 'Halle Berry', 306);  
+-----------------
+
+	CREATE TABLE movies (  
+	    movie_id INT PRIMARY KEY,  
+	    movie_title VARCHAR(100)  
+	);  
+
+	INSERT INTO movies (movie_id, movie_title) VALUES  
+	(301, 'Fast and Furious'),  
+	(302, 'Blonde'),  
+	(303, 'Money Heist'),  
+	(304, 'Titanic'),  
+	(305, 'John Wick');  
+
+
+
+
+------------------
+
+inner join
+-- Table 1: Employee
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    age INT CHECK (age > 0)
+);
+
+INSERT INTO Employee (emp_id, name, age) VALUES
+(1, 'Akhona', 30),
+(2, 'Leasha', 25),
+(3, 'Jennifer', 28),
+(4, 'Refiloe', 35),
+(5, 'Mbulelo', 40),
+(6, 'Josepht', 29),
+(7, 'Thabiso, 33);
+
+-- Table 2: Departments
+CREATE TABLE Departments (
+    dept_id INT PRIMARY KEY,
+    emp_id INT,
+    department_name VARCHAR(50) NOT NULL,
+    FOREIGN KEY (emp_id) REFERENCES Employee(emp_id)
+);
+
+INSERT INTO Departments (dept_id, emp_id, department_name) VALUES
+(101, 1, 'HR'),
+(102, 3, 'Sales'),
+(103, 4, 'Marketing'),
+(104, 6, 'IT'),
+(105, 7, 'Finance');
+
+----------------
+
+
+
+left join
+-- Table 1: Customers
+CREATE TABLE Customers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Customers (customer_id, name) VALUES
+(1, 'Lolo'),
+(2, 'Mpho'),
+(3, 'Keketso');
+
+-- Table 2: Orders
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    product VARCHAR(50) NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+);
+
+INSERT INTO Orders (order_id, customer_id, product) VALUES
+(101, 1, 'Laptop'),
+(102, 2, 'Smartphone');
+
+------------------
+right join
+-- Table 1: Departments
+CREATE TABLE Departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Departments (department_id, department_name) VALUES
+(101, 'HR'),
+(102, 'IT'),
+(103, 'Marketing');
+
+-- Table 2: Employees
+CREATE TABLE Employees (
+    employee_id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES Departments(department_id)
+);
+
+INSERT INTO Employees (employee_id, name, department_id) VALUES
+(1, 'Kabo', 101),
+(2, 'Emma', 102);
+
+---------------
+full join/full outer join
+-- Table 1: Sales
+CREATE TABLE Sales (
+    sale_id INT PRIMARY KEY,
+    customer_id INT,
+    sale_amount DECIMAL(10,2) NOT NULL,
+    sale_date DATE NOT NULL
+);
+
+INSERT INTO Sales (sale_id, customer_id, sale_amount, sale_date) VALUES
+(1001, 201, 500.00, '2025-01-10'),
+(1002, 202, 1200.00, '2025-01-11'),
+(1003, 203, 300.00, '2025-01-12'),
+(1004, 205, 450.00, '2025-01-13');
+
+-- Table 2: Customer Feedback
+CREATE TABLE Customer_Feedback (
+    feedback_id INT PRIMARY KEY,
+    customer_id INT,
+    feedback_score INT CHECK (feedback_score BETWEEN 1 AND 5),
+    feedback_date DATE NOT NULL
+);
+
+INSERT INTO Customer_Feedback (feedback_id, customer_id, feedback_score, feedback_date) VALUES
+(501, 202, 4, '2025-01-14'),
+(502, 203, 5, '2025-01-15'),
+(503, 204, 3, '2025-01-16');
+
+
+------------------
+
+self join
+-- Table: Employees
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    manager_id INT,
+    CONSTRAINT FK_Employees_Manager
+        FOREIGN KEY (manager_id) REFERENCES Employees(emp_id)
+);
+
+INSERT INTO Employees (emp_id, name, manager_id) VALUES
+(1, 'Smanga', NULL),  -- top-level manager
+(2, 'Thabile', 1),      -- reports to Smanga
+(3, 'Ben', 1),        -- reports to Smanga
+(4, 'Keletso', 2);      -- reports to Thabile
+
+------------------
+cross join
+-- Table 1: Products
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Products (product_id, product_na
+
+Security code
+08:59
+Customers (15 records)
+INSERT INTO Customers VALUES
+(1, 'Alice Mokoena', 'Johannesburg'),
+(2, 'Brian Daniels', 'Cape Town'),
+(3, 'Carol Naidoo', 'Durban'),
+(4, 'David Molefe', 'Pretoria'),
+(5, 'Emily Jacobs', 'Cape Town'),
+(6, 'Sipho Dlamini', 'Soweto'),
+(7, 'Thandi Ncube', 'Bulawayo'),
+(8, 'Michael Smith', 'Johannesburg'),
+(9, 'Nomsa Khumalo', 'Durban'),
+(10, 'Kabelo Radebe', 'Pretoria'),
+(11, 'Ayesha Khan', 'Johannesburg'),
+(12, 'Peter Botha', 'Bloemfontein'),
+(13, 'Lerato Phiri', 'Polokwane'),
+(14, 'Sizwe Zulu', 'Richards Bay'),
+(15, 'Fatima Patel', 'Cape Town');
+Branches (15 records)
+INSERT INTO Branches VALUES
+(10, 'JHB Central', 'Johannesburg'),
+(11, 'Sandton City', 'Johannesburg'),
+(12, 'Soweto Mall', 'Soweto'),
+(13, 'Cape Town Main', 'Cape Town'),
+(14, 'Canal Walk', 'Cape Town'),
+(15, 'Durban Central', 'Durban'),
+(16, 'Gateway Mall', 'Durban'),
+(17, 'Pretoria CBD', 'Pretoria'),
+(18, 'Hatfield', 'Pretoria'),
+(19, 'Bloemfontein Central', 'Bloemfontein'),
+(20, 'Polokwane Plaza', 'Polokwane'),
+(21, 'Richards Bay Mall', 'Richards Bay'),
+(22, 'East London Main', 'East London'),
+(23, 'Nelspruit Crossing', 'Nelspruit'),
+(24, 'Kimberley Central', 'Kimberley');
+Accounts (15 records)
+INSERT INTO Accounts VALUES
+(1001, 1, 10, 'Savings', 25000),
+(1002, 1, 11, 'Cheque', 18000),
+(1003, 2, 13, 'Savings', 32000),
+(1004, 3, 15, 'Cheque', 12000),
+(1005, 4, 17, 'Savings', 45000),
+(1006, 5, 14, 'Savings', 15000),
+(1007, 6, 12, 'Cheque', 9000),
+(1008, 7, 10, 'Savings', 22000),
+(1009, 8, 11, 'Cheque', 50000),
+(1010, 9, 16, 'Savings', 27000),
+(1011, 10, 18, 'Cheque', 16000),
+(1012, 11, 10, 'Savings', 39000),
+(1013, 12, 19, 'Savings', 14000),
+(1014, 13, 20, 'Cheque', 11000),
+(1015, 14, 21, 'Savings', 8000);
+
+Security code
+09:00
+Transactions (15 records)
+INSERT INTO Transactions VALUES
+(1, 1001, '2024-01-02', 'Deposit', 5000),
+(2, 1001, '2024-01-10', 'Withdrawal', 2000),
+(3, 1002, '2024-01-05', 'Deposit', 3000),
+(4, 1003, '2024-01-08', 'Withdrawal', 1500),
+(5, 1004, '2024-01-12', 'Deposit', 4000),
+(6, 1005, '2024-01-15', 'Withdrawal', 5000),
+(7, 1006, '2024-01-18', 'Deposit', 2500),
+(8, 1007, '2024-01-20', 'Withdrawal', 1000),
+(9, 1008, '2024-01-22', 'Deposit', 3500),
+(10, 1009, '2024-01-25', 'Withdrawal', 7000),
+(11, 1010, '2024-01-26', 'Deposit', 4200),
+(12, 1011, '2024-01-28', 'Withdrawal', 1800),
+(13, 1012, '2024-01-29', 'Deposit', 6000),
+(14, 1013, '2024-01-30', 'Withdrawal', 1200),
+(15, 1014, '2024-01-31', 'Deposit', 2800);
+Loans (15 records)
+INSERT INTO Loans VALUES
+(501, 1, 100000, 10.5),
+(502, 2, 75000, 11.2),
+(503, 3, 50000, 12.0),
+(504, 4, 120000, 9.8),
+(505, 5, 90000, 10.1),
+(506, 6, 30000, 13.5),
+(507, 7, 45000, 12.8),
+(508, 8, 200000, 8.9),
+(509, 9, 60000, 11.9),
+(510, 10, 85000, 10.7),
+(511, 11, 110000, 9.5),
+(512, 12, 40000, 13.0),
+(513, 13, 55000, 12.2),
+(514, 14, 25000, 14.0),
+(515, 15, 70000, 11.0);
+
+Security code
+09:30
+query for inner join: select
+employee.emp_id,
+employee.name,
+departments.department_name
+from employee
+inner join departments
+on employee.emp_id = departments.emp_id;
+
+Security code
+09:44
+---query for left join
+select
+customers.customer_id, customers.name, orders.order_id, orders.product
+from customers
+left join orders
+on customers.customer_id = orders.customer_id;
+
+Security code
+09:52
+---query for right join: SELECT Employees.name, Employees.department_id,Departments.department_name
+FROM Employees
+RIGHT JOIN Departments
+ON Employees.department_id = Departments.department_id;
+
+Security code
+09:54
+-- Table 1: Sales
+CREATE TABLE Sales (
+    sale_id INT PRIMARY KEY,
+    customer_id INT,
+    sale_amount DECIMAL(10,2) NOT NULL,
+    sale_date DATE NOT NULL
+);
+
+INSERT INTO Sales (sale_id, customer_id, sale_amount, sale_date) VALUES
+(1001, 201, 500.00, '2025-01-10'),
+(1002, 202, 1200.00, '2025-01-11'),
+(1003, 203, 300.00, '2025-01-12'),
+(1004, 205, 450.00, '2025-01-13');
+
+-- Table 2: Customer Feedback
+CREATE TABLE Customer_Feedback (
+    feedback_id INT PRIMARY KEY,
+    customer_id INT,
+    feedback_score INT CHECK (feedback_score BETWEEN 1 AND 5),
+    feedback_date DATE NOT NULL
+);
+
+INSERT INTO Customer_Feedback (feedback_id, customer_id, feedback_score, feedback_date) VALUES
+(501, 202, 4, '2025-01-14'),
+(502, 203, 5, '2025-01-15'),
+(503, 204, 3, '2025-01-16');
+
+Security code
+09:59
+---QUERY FOR FULL JOIN
+SELECT
+Sales.customer_id, Sales.sale_amount, Sales.sale_date,
+Customer_Feedback.feedback_score, Customer_Feedback.feedback_date
+
+FROM Sales
+FULL JOIN Customer_Feedback
+ON  Sales.customer_id = Customer_Feedback.customer_id;
+
+Security code
+10:02
+-- Table: Employees
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    manager_id INT,
+    CONSTRAINT FK_Employees_Manager
+        FOREIGN KEY (manager_id) REFERENCES Employees(emp_id)
+);
+
+INSERT INTO Employees (emp_id, name, manager_id) VALUES
+(1, 'Smanga', NULL),  -- top-level manager
+(2, 'Thabile', 1),      -- reports to Smanga
+(3, 'Ben', 1),        -- reports to Smanga
+(4, 'Keletso', 2);      -- reports to Thabile

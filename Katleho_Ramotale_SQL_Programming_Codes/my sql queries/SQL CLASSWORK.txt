@@ -1,0 +1,6 @@
+
+I am running a music publishing company. I need to track Artists and their Songs.
+​Each Artist has a Name, an Email, and a Genre.
+​Each Song has a Title, a Release Date, and a 'Plays' count.
+​Multiple songs can belong to one artist.
+​The Problem: I need to find the names and emails of all 'Rap' artists who have released a song in 2026 that has more than 40,000 plays, so I can send them a bonus check."

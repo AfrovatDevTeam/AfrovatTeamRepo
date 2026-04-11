@@ -1,0 +1,13 @@
+create table HEROES
+(
+ID int primary key not null,
+Lastname varchar(56) not null,
+Firstname varchar(56) not null,
+Age int Check (Age >= 18)
+)
+
+insert into HEROES
+values
+(800, 'jones', 'zendaya', 18);
+
+select * from HEROES

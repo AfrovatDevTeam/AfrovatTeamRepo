@@ -1,0 +1,20 @@
+create table joziline
+(
+ID int primary key not null,
+Emailaddress varchar(50) unique not null,
+Lastname varchar(50) unique not null,
+Firstname varchar(50) unique not null
+)
+
+insert into joziline
+values
+(300, 'romeyjoseph@gmai.com', 'Romey', 'Joseph'),
+(600, 'helennkuna@gmail.com', 'Helen', 'Nkuna');
+
+select * from joziline
+
+--unique meaning you can't have the same name or email as created in the table all have to be unique--
+
+e.g. (300, 'romeyjoseph@gmai.com', 'Romey', 'Joseph'),
+(600, 'romeyjoseph@gmai.com', 'Romey', 'Joseph'),
+

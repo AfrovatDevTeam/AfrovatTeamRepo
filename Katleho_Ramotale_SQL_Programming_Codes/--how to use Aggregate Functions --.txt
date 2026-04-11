@@ -1,0 +1,72 @@
+--how to use Aggregate Functions ---
+Create table Sales
+(
+StaffID int primary key not null,
+StaffName varchar(45) not null,
+StaffSurname varchar(45) not null,
+Department varchar(45) not null,
+ItemSold varchar(56) not null,
+Amount money not null,
+Quantity int not null
+)
+insert into Sales
+values
+(100, 'Sara', 'Martins', 'Sales Department', 'TV', 15000, 1),
+(200, 'Francis', 'Anosike', 'Sales Department', 'Iphone 17', 25000, 3),
+(300, 'Wendy', 'Williams', 'Admin Department', 'Car', 150000, 2),
+(400, 'John', 'Webs', 'Admin Department', 'Shoes', 1000, 5),
+(500, 'Jude', 'Bellingham', 'Sports Department', 'Soccer Shoes', 25000, 5);
+
+select * from Sales
+
+--lets get the Total of Amount sold--
+select Sum(Amount) from Sales
+s
+--lets get the Average sales--Mean
+select Avg (Amount) from Sales
+
+--Lets get the Maximum sale made
+select Max(Amount) from Sales
+
+--lets the Minimum Sale Made
+select Min(Amount) from Sales
+
+select count (Quantity) from Sales
+
+select SQRT (16)
+
+
+select LOG10 (10)
+
+select UPPER (StaffName) from Sales
+select lower (StaffName) from Sales
+
+select LEN ('Francis')
+
+select Replace 'Francis', 'a', 's')
+
+select Concat ('Francis', 'Anosike') as Fullnames
+select Concat ('Francis',' ', 'Anosike') as Fullnames
+select Concat ('Francis',', ', 'Anosike') as Fullnames
+
+-tells you which month 
+
+select month ('2026/02/04') as Months-tells you which month 
+select Year ('2026/02/04') as Years -tells you which year 
+select Day ('2026/02/04') as Days onths-tells you which month 
+
+select SYSDATETIME() as Result
+
+select GETUTCDATE() as Result
+
+--Return Yes if the condition is True, or 
+--Return No if the condition is False
+
+select IIF (500 >= 1000, 'Yes', 'No') as Result
+select IIF (500 <= 1000, 'Yes', 'No') as Result
+
+select IIF (Amount > 5000, 'Profit', 'Loss') as Result from Sales
+
+
+
+
