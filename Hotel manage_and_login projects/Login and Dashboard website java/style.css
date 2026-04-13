@@ -1,0 +1,51 @@
+body{
+font-family:Arial;
+text-align:center;
+background:linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+}
+
+#loginBox{
+background:white;
+color:black;
+width:300px;
+margin:100px auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+#dashboard{
+display:none;
+background:white;
+color:black;
+width:400px;
+margin:100px auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+background:#368243e7;
+color:rgb(255, 255, 255);
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#4c63d2;
+}
+
+#errorMsg{
+color:red;
+font-weight:bold;
+}

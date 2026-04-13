@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Luxury Hotel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Luxury Hotel</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#booking">Book Now</a>
+        <a href="#reservations">Reservations</a>
+    </nav>
+</header>
+
+
+
+<!-- HOME -->
+<section id="home" class="hero">
+    <h2>Welcome to Luxury Hotel</h2>
+    <p>Relax. Refresh. Recharge.</p>
+</section>
+
+<!-- ROOMS -->
+<section id="rooms">
+    <h2>Our Rooms</h2>
+
+    <div class="room-container">
+
+        <div class="room">
+            <img src="cool_pic1.jpg">
+            <h3>Single Room</h3>
+            <p>Perfect for solo travelers</p>
+            <p class="price">R500 per night</p>
+        </div>
+
+        <div class="room">
+            <img src="cool_pic2.jpg">
+            <h3>Double Room</h3>
+            <p>Perfect for couples</p>
+            <p class="price">R800 per night</p>
+        </div>
+
+        <div class="room">
+            <img src="cool_pic3.jpg">
+            <h3>Luxury Suite</h3>
+            <p>Ultimate luxury experience</p>
+            <p class="price">R1500 per night</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+<h2>Book a Room</h2>
+
+<form id="bookingForm">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<select id="roomType">
+<option value="Single">Single Room</option>
+<option value="Double">Double Room</option>
+<option value="Suite">Suite</option>
+</select>
+
+<label>Check In</label>
+<input type="date" id="checkin" required>
+
+<label>Check Out</label>
+<input type="date" id="checkout" required>
+
+<button type="submit">Book Room</button>
+
+</form>
+
+<h3 id="totalPrice"></h3>
+
+</section>
+
+<!-- RESERVATIONS -->
+<section id="reservations">
+<h2>Reservation List</h2>
+
+<ul id="reservationList"></ul>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

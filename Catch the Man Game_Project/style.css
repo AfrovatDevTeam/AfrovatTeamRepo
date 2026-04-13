@@ -1,0 +1,73 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    
+    /* BACKGROUND IMAGE */
+    background-image:url("game.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* GAME CARD */
+
+.gameContainer{
+    background:rgba(255,255,255,0.9);
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:550px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+
+/* START BUTTON */
+
+#startBtn{
+
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(45deg,#ff4e50,#fc913a);
+    color:white;
+    cursor:pointer;
+    margin-bottom:15px;
+
+    transition:0.3s;
+}
+
+#startBtn:hover{
+
+    transform:scale(1.1);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+}
+
+
+/* GAME AREA */
+
+#gameArea{
+    width:500px;
+    height:300px;
+    border:3px solid black;
+    margin:auto;
+    position:relative;
+    background:white;
+    overflow:hidden;
+}
+
+
+/* CHARACTER */
+
+#man{
+    font-size:40px;
+    position:absolute;
+    cursor:pointer;
+}
