@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Book Your Stay</h1>
+    <a href="index.html">Home</a>
+</header>
+
+<form id="bookingForm">
+    <input type="text" id="name" placeholder="Name" required>
+
+    <select id="room">
+        <option value="Single">Single - R500</option>
+        <option value="Double">Double - R800</option>
+        <option value="Suite">Suite - R1500</option>
+    </select>
+
+    <input type="date" id="date" required>
+
+    <p id="price">Total: R0</p>
+
+    <button type="submit">Proceed to Payment</button>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>

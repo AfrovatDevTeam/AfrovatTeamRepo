@@ -1,27 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FT Luxury Hotel - Login</title>
-<link rel="stylesheet" href="style.css">
+    <title>FT Luxury Hotel</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="animated-bg">
-    <div class="login-container" id="loginContainer">
-        <h1>FT Luxury Hotel</h1>
-        <h2>Member Login</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <label>
-                <input type="checkbox" id="rememberMe"> Remember Me
-            </label>
-            <button type="submit">Login</button>
-            <p id="errorMsg" class="error"></p>
-        </form>
+
+<header>
+    <h1>FT Luxury Hotel</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book Room</a>
+        <a href="admin.html">Dashboard</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Welcome to Luxury</h2>
+    <p>Experience comfort like never before</p>
+</section>
+
+<section style="padding: 40px; text-align:center;">
+    <h2>Our Rooms</h2>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px;">
+
+        <div>
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" width="250">
+            <p>Single Room - R500</p>
+        </div>
+
+        <div>
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427" width="250">
+            <p>Double Room - R800</p>
+        </div>
+
+        <div>
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" width="250">
+            <p>Suite - R1500</p>
+        </div>
+
     </div>
-</div>
+</section>
+
+<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
 <script src="script.js"></script>
 </body>
 </html>
