@@ -1,0 +1,273 @@
+<html>
+    <head>
+        <title>Lotis Art</title>
+        <link rel="stylesheet" type="text/css" href="graphics.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+TC&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+    </head>
+    <body>
+        <form id="loginForm" class="container">
+            <h1 class="title">Lotis Graphic Art Corner <i class="fa-solid fa-palette fa-spin"></i></h1>
+            <h4>Admin Login</h4>
+                <b><label for="name">Name:</label></b>
+                    <input type="text" id="name"  class="text1"></br>
+
+                <b></br><label for="password">Password:</label></b>
+                    <input type="password" id="password" class="text1"></br>
+                <label>Remember Me</label>
+                    <input type="checkbox" id="rememberMe"></br>
+                </br><button type="submit" class="login"><b><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</b></button>
+             </br>
+    <script>
+        function show() {
+            document.getElementById("dashboard").style.display = "block";
+            document.getElementById("loginForm").style.display = "none";
+        }
+
+        window.onload = function() {
+            const rememberedUser = localStorage.getItem("rememberedUser");
+            if (rememberedUser) {
+                document.getElementById("name").value = rememberedUser;
+                document.getElementById("rememberMe").checked = true;
+            }
+
+            if (localStorage.getItem("isLoggedIn") === "true" || sessionStorage.getItem("isLoggedIn") === "true") {
+                show();
+            }
+        };
+                            const users ={
+                                Teolen: "321",
+                                Adam: "123",
+                            };
+
+                        document.getElementById("loginForm").addEventListener("submit", (event) => {
+                            event.preventDefault();
+                            const name = document.getElementById("name").value;
+                            const password = document.getElementById("password").value;
+                            let rememberMe = document.getElementById("rememberMe").checked;
+                            const message = document.getElementById("message");
+                            
+
+                        if (users[name] === password) {
+                        document.getElementById("dashboard").style.display = "block";
+                        document.getElementById("loginForm").style.display = "none";
+                        alert("Login successful!");
+                  
+                            if (rememberMe) {
+                                localStorage.setItem("isLoggedIn", "true");
+                                localStorage.setItem("rememberedUser", name);
+                            } else {
+                                sessionStorage.setItem("isLoggedIn", "true");
+                                localStorage.removeItem("rememberedUser");
+                            }
+ 
+                            } else {
+                         message.textContent = "Invalid username or password.";
+                         }
+                    });       
+    </script>
+       <p id="message"></p>
+        </form>
+<!-------------------------------------------------------------------Dashboard------------------------------------------------------------------------------------------------------>
+        <div id="dashboard" style="display: none;" class="hidden">
+            <header>
+               <button class="about" onclick="Logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+               <h3>Dashboard <i class="fa-solid fa-chart-line"></i></h3>    
+            </header>           
+            <section class="block" >
+               <ul>
+                  <p><b><u>Current Sales Projection for 2026</u></b>
+                     </br>Sales are expected to reach its highest due to:</br>
+                     <Li>Expansion of the social marketinng team</Li>
+                     <li>Expanded services</li>
+                  </p>
+               </ul>
+                    <canvas id="myChart" style="width:100%;max-width:800px" height="100px"></canvas>
+               <section>  
+                        <ul>
+                           <p><u>Sales Prediction for 2027</u>
+                            </br>To increase sale for the forseeable future:</br>
+                             <li>Move towards automation for bigger tasks to decrease employee injury and exhustion</li>
+                             <li>Increase in manpower</li>
+                           </p>
+                        </ul>
+               </section>
+         </section>
+
+         <canvas id="Productivity" style="width:100%;max-width:600px" height="80px"></canvas> 
+            <button class="colapse"><i class="fa-solid fa-compass-drafting"></i>Braketz Project</button>
+                <div class="projects">
+                    <div>
+                        <ul>
+                            <b><u>Client</u></b></br>
+                            <li>Braketz Bar</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <b><u>Specfications</u></b></br>
+                            <li>Website Desgining</li>
+                            <li>Store Banner</li>
+                            <li>Flyer Designs</li>
+                        </ul>
+                    </div>
+                    <div>
+                            <b><u><i class="fa-solid fa-bars-progress"></i> Progress:</u></b>
+                            30% Complete
+                    </div>
+                    <div>
+                            <ul>
+                            <b><u>Incomplete</u></b>
+                            <li>Website Designing</li>
+                            <li>Store Banner</li>
+                            </ul>
+                    </div>
+                </div>
+            <button class="colapse"><i class="fa-solid fa-compass-drafting"></i>Jose Cars Project</button>
+                <div class="projects">
+                    <div>
+                        <ul>
+                            <b><u>Client</u></b></br>
+                            <li>Jose Cars</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <b><u>Specfications</u></b></br>
+                            <li>Logo</li>
+                            <li>Banner</li>
+                            <li>Store Board</li>
+                            <li>Online store layout</li>
+                        </ul>
+                    </div>
+                    <div>
+                            <b><u><i class="fa-solid fa-bars-progress"></i> Progress:</u></b>
+                            67% Complete
+                    </div>
+                    <div>
+                            <ul>
+                            <b><u>Incomplete</u></b>
+                            <li>Store Board Design</li>
+                            <li>Online store layout</li>
+                            </ul>
+                    </div>
+                    
+                </div>
+             
+        <footer class="navbar">
+            <ul>
+                <a href="login.html"><i class="fa fa-home"></i>Dashboard |</a>
+                <a href="mailto:graphic-artcorner@gmail.com"><i class="fa-solid fa-screwdriver-wrench"></i> Support</a></br>
+                065 849 9399
+            </ul>
+         </footer>
+
+        <script >
+            const xValues=["January","Febuary","March","April"];
+            const yValues=[30,27,40,20]
+            const barColors=["rgb(21,50,67)",
+                             "rgb(40,75,99)",   
+                            "rgb(21,50,67)",
+                            "rgb(40,75,99)"
+                        ]
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+                type: "bar",
+                    data: {
+                    labels: xValues,
+                    datasets: [{
+                    backgroundColor: barColors,
+                    font: {size: 25},
+                data: yValues
+                }]
+             },
+                options: {
+                    plugins: {
+                    legend: {display: false},
+                    title: {
+                        display: true,
+                            text: "Sales 2026",
+                                font: {size: 25}
+                            }
+                        }
+                    }
+                });         
+            const project =["January","Febuary","March","April"];
+            const done = document.getElementById('Productivity');
+            
+            new Chart(done,{
+                type:"line",
+                data:{
+                    labels: project,
+                    datasets: [{
+                        label:"Amy",
+                        data:
+                        [9,11,12,18],
+                        borderColor: "red",
+                        pointRadius: 2,
+                        tension: 0.4,
+                    }, { 
+                        label:"John",
+                        data:
+                    [5,8,15,22],
+                         borderColor: "green",
+                        pointRadius: 2,
+                        tension: 0.4,
+                    }, { 
+                        label:"Sara",
+                        data: 
+                    [6,8,14,20],
+                        borderColor: "blue",
+                        pointRadius: 2,
+                        tension: 0.4,
+                    }]
+                },
+                options: {
+                        plugins: {
+                            legend: { display: true },
+                            title: {display:true,
+                                text: "Development Team Productivity",
+                                font:{size:25}
+                            }
+                        }
+                    }
+            });
+
+
+
+
+
+
+
+            var col = document.getElementsByClassName("colapse");
+            var i;
+            for (i = 0; i < col.length; i++){
+               col[i].addEventListener("click", function(){
+                  this.classList.toggle('active');
+                  var content = this.nextElementSibling;
+                  if (content.style.maxHeight){
+                     content.style.maxHeight = null;
+                  }else{
+                     content.style.maxHeight = content.scrollHeight + "px";
+                  }
+               });
+            }       
+
+            function Logout(){
+              sessionStorage.clear()
+              localStorage.clear()  
+                        document.getElementById("dashboard").style.display = "none";
+                        document.getElementById("loginForm").style.display = "block";
+
+            }
+            
+        </script>
+        </div>
+    </body>
+    
+</html>

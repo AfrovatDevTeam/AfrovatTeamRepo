@@ -1,0 +1,395 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(152,93,104);
+}
+
+header.sticky{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    gap: 24%;
+    background-color: rgb(184,196,187);
+    color: rgb(152,93,104);
+    font-size: 30px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.middle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 2px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 3px solid rgb(152,93,104);
+}
+.restrict{
+    width: 75%;
+    height: 30%;
+    border: 2px;
+    border-radius: 25px;
+}
+section{
+    width: 700px;
+    height: 50%;
+    border-radius: 24px;
+    color: rgb(184,196,187);
+    background-color:rgb(152,93,104) ;
+}
+#mainContent{
+    height: auto;
+    font-family: "Noto Serif Display", serif;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(255,215,0);
+    background-color:rgb(189, 206, 239);
+}
+
+.container{
+    display: flex;
+    flex-flow: row;
+    gap: 5px;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    color: rgb(184,196,187);
+    background-color:transparent ;
+
+    }
+.contain{
+    display: flex;
+    font-size: 13px;
+    flex-flow: row ;
+    gap: 430px;
+    width: 100%;
+    height: 180px;
+    border-radius: 24px;
+    color: rgb(60,54,42);
+    background-color:transparent ;
+    }
+a{
+     color: rgb(60,54,42);
+}
+a:hover{
+    color: rgb(178, 154, 159);
+}
+.icons{
+        font-family: "Noto Serif Display", serif;
+        font-size: 35px;
+}
+.bttn{
+        font-family: "Noto Serif Display", serif;
+        font-size: 29px;
+        color: rgb(60,54,42);
+        background-color: rgb(189, 206, 239);
+        border: none;
+        width: fit-content;
+        border-radius: 15px;
+
+}
+.bttn:hover{
+    color: rgb(189, 206, 239);
+    background-color:rgb(60,54,42) ;
+}
+<!----------------------------Rooms-section--------------------------------------------------------------------------------------------------------------------------------->
+#roomsSection{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9999;
+    border-radius: 24px;
+    text-align: center;
+    font-size: 26px;
+    font-family: "Noto Serif Display", serif;
+    color:rgb(152,93,104) ;
+    background-color:azure ;
+    }
+header.sticky2{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    gap: 25%;
+    background-color: rgb(152,93,104);
+    color: rgb(184,196,187);
+    font-size: 30px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.content{
+    font-size: 20px;
+    font-family: "Noto Serif Display", serif;
+    background-color: rgb(184,196,187);
+    text-align: center;
+}
+.containroom{
+    display: flex;
+    font-size: 13px;
+    flex-flow: row ;
+    gap: 520px;
+    width: 100%;
+    border-radius: 24px;
+    color:rgb(152,93,104);
+    background-color: transparent;
+    }
+.desc{
+    display: flex;
+    gap: 55px;
+    font-size: 25px;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    color:rgb(152,93,104);
+    background-color: rgb(184,196,187);
+    border: 3px solid rgb(152,93,104);
+}
+.item{
+    display: flex;
+    flex-flow: row;
+    gap: 150px;
+    font-size: 20px;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    color:rgb(152,93,104);
+    background-color: rgb(184,196,187);
+}
+
+.roomimg{
+    width: 100%;
+    height: 90%;
+    border-radius: 15%;
+}
+h2{
+    color:rgb(60,54,42);
+    font-size: 28px;
+
+}
+h3{
+    color:rgb(60,54,42);
+    font-size: 28px;
+}
+<!------------------------------------------------------------------Booking-Page--------------------------------------------------------------------------->
+#LoginSection{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9999;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 26px;
+    font-family: "Noto Serif Display", serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(152,93,104);
+    }
+.LoginSection{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9999;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 26px;
+    font-family: "Noto Serif Display", serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(152,93,104);
+    }
+.bookcon{
+    display: block;
+    gap: 55px;
+    font-size: 25px;
+    text-align: center;
+    width: min(600px, 90%);
+    height: auto;
+    padding: 2rem;
+    margin: auto;
+    border-radius: 24px;
+    background-color:rgb(171, 183, 213) ;
+    color: rgb(152,93,104);
+    font-family: "Noto Serif Display", serif;
+}
+.text{
+    color: rgb(60,54,42);
+    background-color: rgb(168,150,171);
+    width: 260px;
+    height: 30px;
+    font-size: 20px;
+    font-family: "Noto Serif Display", serif;
+    justify-content: center;
+}
+.text1{
+    color: rgb(60,54,42);
+    background-color: rgb(168,150,171);
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    font-family: "Noto Serif Display", serif;
+    justify-content: center;
+}
+<!-----------------------------------------------booking-form------------------------------------------------->
+#booking-form{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9999;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Noto Serif Display", serif;
+    color: rgb(171, 183, 213);
+    background-color:rgb(152,93,104);
+    }
+.booking-form{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9999;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Noto Serif Display", serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(152,93,104);
+    }
+.booking{
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    font-size: 25px;
+    text-align: center;
+    width: min(600px, 90%);
+    height: auto;
+    padding: 2rem;
+    margin: auto;
+    border-radius: 20px;
+    background-color:rgb(171, 183, 213) ;
+    color: rgb(152,93,104);
+    font-family: "Noto Serif Display", serif;
+}
+<!------------------------------------------------payment------------------------------------------------------------------------------->
+#payment-section{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9999;
+    border-radius: 24px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 26px;
+    font-family: "Noto Serif Display", serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(152,93,104);
+}
+.payment{
+    display: none;
+    position: fixed;
+    align-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9999;
+    border-radius: 24px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Noto Serif Display", serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(152,93,104);
+    }
+.pay{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 55px;
+    font-size: 25px;
+    text-align: center;
+    width: min(600px, 90%);
+    height: auto;
+    padding: 2rem;
+    margin: auto;
+    border-radius: 20px;
+    background-color:rgb(171, 183, 213) ;
+    color: rgb(152,93,104);
+    font-family: "Noto Serif Display", serif;
+}
+#admin-dashboard{
+    background-color:rgb(171, 183, 213) ;
+    justify-content: center;
+    align-content: center;
+    height: fit-content;
+     font-family: "Noto Serif Display", serif;
+}
+.admin-dashboard{
+    background-color:rgb(171, 183, 213) ;
+    color: rgb(255, 255, 255);
+    height: fit-content;
+     font-family: "Noto Serif Display", serif;
+    width: min(95%, 900px);
+  margin: 2rem auto;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#viewBookings{
+    color:rgb(60,54,42);
+    background-color: rgb(189, 206, 239);
+    font-family: "Noto Serif Display", serif;
+}

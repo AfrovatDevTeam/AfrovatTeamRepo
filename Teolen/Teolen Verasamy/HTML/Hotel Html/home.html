@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="home.css">
+        <script src="https://kit.fontawesome.com/e64754b610.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wdth,wght@0,87.5,100..900;1,87.5,100..900&display=swap" rel="stylesheet">
+        <title>Home Page</title>
+    </head>
+    <body>
+        <div id="mainContent" class="content">
+      <header class="sticky">
+            <ul>
+                <button onclick="book()" class="bttn"><i class="fa-solid fa-key fa-bounce fa-xl"></i>Book Now!</button>
+                <button onclick="adminlogin()" class="bttn"><i class="fa-solid fa-user-tie"></i>Admin Login</button>
+            </ul>
+            <ul>
+                <b><h4>La Vida Casa Suna</br>Mallorca</h4></h4></b>
+            </ul>
+            <ul>
+                <button onclick="showRooms()" class="bttn"><i class="fa-solid fa-bed fa-lg"></i>View Available Rooms</button>
+            </ul>
+        </header>
+        <div class="rectangle">
+            <img src="./bg.jpg" width="50%" class="middle" >
+            <p><i class="fa-solid fa-star fa-2xl"></i><i class="fa-solid fa-star fa-2xl"></i><i class="fa-solid fa-star fa-2xl"></i><i class="fa-solid fa-star fa-2xl"></i></p>
+            </div>
+       <div class="container">
+        <section>
+            <ul>
+                <h2>Types of rooms</h2>
+                    Single Casa<br>
+                    Double Casa<br>
+                    Deluxe Amigo Suite<br>
+
+                <h2>Features Inculded in a booking:</h2>
+                    All Day meals inculded.<br>
+                    Towel service<br>
+                    Spa days every Tuesday<br>
+                    Room Cleaning<br>
+                    Gym faclities<br>
+                    Bottomless bar<br>
+                    Acess to special events<br>
+            </ul>
+       </section>
+
+       <section>
+            <ul>
+                <b><h3>About La Vida Casa Suna</h3></b>
+                    <img src="./entrance.jpg" class="restrict"><br>
+                    Located near the Sierra Na Burguesa with the bay of
+                    <br> Palma in the background, the La Vida Esta Casa ensures
+                    <br> you a pleasant stay in Mallorca. The hotel is situated in an elegant residential area very close to the exclusive
+                    <br> Puerto Portals marina and its complete leisure area with
+                    <br> shops and a sophisticated gastronomic offer.
+            </ul>
+       </section>
+
+       <section>
+            <ul>
+                <h2>Number of rooms available:</h2>
+                    <p id="availroomcount">57</p>
+                <h2>Rooms Booked:</h2>
+                <p id="bookroomcount"></p>
+                    <h2>Check-in Time:</h2>
+                    03:00 - 23:30
+                    <h2>Check-out Time</h2>
+                    05:00 - 22:00<br>
+                    <h2>Pets</h2>
+                    Not Allowed<br>
+            </ul>
+       </section>
+
+       </div class="content">
+        <footer class="contain">
+            <ul>
+                <h2>Help</h2>
+                    <a href="">Support</a><br>
+                    <a href="emailto:Lavidacasa@gmail.com">Email</a><br>
+                    Hotel:011 489 7539<br>
+                 Help Line:011 789 4564<br>
+            </ul>
+            <ul>
+                <br>
+                    <a href="https://www.bing.com/maps/directions?ty=0&v=2&sV=1&rtp=%7Epos.39.535736083984375_2.576211929321289__Exe%2520Portals%2520Nous_&mode=d&cp=39.535742%7E2.576204&lvl=16&style=r">Main Office</a>
+            </br><button onclick="resources()" class="bttn">Resources</button>
+                </ul>
+            <ul>
+                <h2>Follow Us!</h2>
+                    <i class="fa-brands fa-youtube fa-lg"></i> 
+                    <i class="fa-brands fa-twitter fa-lg"></i><br>
+                    <i class="fa-brands fa-bluesky fa-lg"></i>
+                    <i class="fa-brands fa-facebook-f fa-lg"></i><br>
+                    <i class="fa-brands fa-instagram fa-lg"></i>
+                    <i class="fa-brands fa-whatsapp fa-lg"></i>
+            </ul>
+        </footer>
+        </div>
+        <script>
+            function showRooms(){
+                document.getElementById("mainContent").style.display = "none";
+                document.getElementById("roomsSection").style.display = "block";
+                document.getElementById("LoginSection").style.display = "none";
+                document.getElementById("admin-dashboard").style.display = "none";
+                document.getElementById("resources").style.display = "none";
+            }
+            function book(){
+                document.getElementById("mainContent").style.display = "none";
+                document.getElementById("roomsSection").style.display = "none";
+                document.getElementById("LoginSection").style.display = "block";
+                document.getElementById("admin-dashboard").style.display = "none";
+                document.getElementById("resources").style.display = "none";
+            }
+            function adminlogin(){
+                document.getElementById("mainContent").style.display = "none";
+                document.getElementById("roomsSection").style.display = "none";
+                document.getElementById("LoginSection").style.display = "block";
+                document.getElementById("resources").style.display = "none";
+
+            }
+        </script>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~This is the begining pf the Room section code~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+        <div class="content" id="roomsSection" style="display:none;">
+            <header class="sticky2">
+                <ul>
+                    <button onclick="book()" class="bttn"><i class="fa-solid fa-key fa-bounce fa-xl"></i>Book Now!</button></br>
+                    <button onclick="adminlogin()" class="bttn"><i class="fa-solid fa-user-tie"></i>Admin Login</button>
+                    
+                </ul>
+                <ul>
+                    <b><h4>La Vida Casa Suna</br>Mallorca</h4></h4></b>
+                </ul>
+                <ul>
+                    <button onclick="home()" class="bttn"><i class="fa-solid fa-house"></i>Home</button>
+                </ul>
+            </header>
+
+                <h3>Paradise is only a few clicks away...</h3>
+                    <P>The 57 rooms at La Vida Casa Suna are equipped with all the services you will need during your visit to the Calvià area.<br>
+                    Thanks to its range of amenities, you will enjoy the most restful rest in our accommodations, and in some of them, spectacular sea views.</P>
+            <section class="desc">
+                <ul>
+                    <P>
+                    <h2>Single Casa</h2>
+                    Equipped with all the comforts, the Single Casa is a paradise for travelers seeking relaxation and rest, two of the priorities of La Vida Casa Suna.
+                    </P>
+                </ul>
+                <ul>
+                    <li>Wifi</li>
+                    <li>Telephone</li>
+                    <li>LCD Television</li>
+                </ul>
+                <ul>
+                    <li>Mini Bar</li>
+                    <li>Amenties</li>
+                    <li>Safety Deposit box</li>
+                </ul>
+                <ul>
+                    <img src="./single.jpg" class="roomimg">
+                </ul>
+            </section>
+            <section class="desc">
+                <ul>
+                    <img src="./double.jpg" class="roomimg">
+                </ul>                
+                <ul>          
+                    <P><h2>Double Casa</h2>
+                    Rest and enjoy equally in this room with terrace has a magnificent horison of the endless sea.All rooms of this type come with a terrace equipped with outdoor seating (11 m²).
+                    </P>
+                </ul>
+                <ul>
+                    <li>Wifi</li>
+                    <li>Telephone</li>
+                    <li>LCD Television</li>
+                </ul>
+                <ul>
+                    <li>Mini Bar</li>
+                    <li>Amenties</li>
+                    <li>Safety Deposit box</li>
+                </ul>  
+            </section>
+            <section class="desc">
+                <ul>
+                    <P>
+                    <h2>Deluxe Amigo Suite</h2>
+                    Our Deluxe rooms offer extra space and comfort thanks to their sitting
+                    <br> area with a sofa bed, where you can share moments of relaxation.
+                    <br> All rooms of this type come with a furnished balcony (4 m²).
+                </ul>
+                <ul>
+                    <li>Wifi</li>
+                    <li>Telephone</li>
+                    <li>LCD Television</li>
+                </ul>
+                <ul>
+                    <li>Mini Bar</li>
+                    <li>Amenties</li>
+                    <li>Safety Deposit box</li>
+                </ul>
+                <ul>
+                    <img src="./amigo1.jpg" class="roomimg">
+                </ul>
+            </section>
+            
+            <footer class="containroom">
+            <ul>
+                <h2>Help</h2>
+                <a href="">Support</a><br>
+                <a href="emailto:Lavidacasa@gmail.com">Email</a><br>
+                Hotel:011 489 7539<br>
+                Help Line:011 789 4564<br>
+            </ul>
+            <ul>
+            <br>
+                <a href="https://www.bing.com/maps/directions?ty=0&v=2&sV=1&rtp=%7Epos.39.535736083984375_2.576211929321289__Exe%2520Portals%2520Nous_&mode=d&cp=39.535742%7E2.576204&lvl=16&style=r">Main Office</a>
+            </ul>
+            <ul>
+                <h2>Follow Us!</h2>
+                <i class="fa-brands fa-youtube fa-lg"></i> 
+                <i class="fa-brands fa-twitter fa-lg"></i><br>
+                <i class="fa-brands fa-bluesky fa-lg"></i>
+                <i class="fa-brands fa-facebook-f fa-lg"></i><br>
+                <i class="fa-brands fa-instagram fa-lg"></i>
+                <i class="fa-brands fa-whatsapp fa-lg"></i>
+            </ul>
+        </footer>
+        <script>
+            function home(){
+                document.getElementById("mainContent").style.display = "block";
+                document.getElementById("roomsSection").style.display = "none";
+                document.getElementById("LoginSection").style.display = "none";
+                document.getElementById("booking-form").style.display = "none";
+                document.getElementById("payment-section").style.display = "none";
+                document.getElementById("admin-dashboard").style.display = "none";
+                document.getElementById("resources").style.display = "none";
+            }
+        </script>
+        </div>
+        <!----------------------------------------------------Login section-------------------------------------------------------------------------------------->
+        <div id="LoginSection" style="display:none;" class="LoginSection">
+            <section class="bookcon">
+                    <form>
+                        <header><h4>Login</h4></header>
+                        <label for="username">Username:
+                       <input type="text" id="username" class="text"></label></br> 
+                       </br><label for="password">Password:
+                        <input type="password" id="password" class="text">
+                       </label></br>
+                    </br><button type="submit" class="bttn"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</button>
+                    <button onclick="home()" class="bttn"><i class="fa-solid fa-house"></i>Home</button>
+                    </form>
+                    <script>
+                            const users ={
+                                Monica: "Pass123",
+                                Adam: "Applez",
+                                Theo: "Montez",
+
+                                admin: "Silo45",
+                            };
+
+                        document.getElementById("LoginSection").addEventListener("submit", (event) => {
+                            event.preventDefault();
+                            const username = document.getElementById("username").value;
+                            const password = document.getElementById("password").value;
+
+                        if (users[username] === password) {
+                            alert("Login successful!");
+                            document.getElementById("LoginSection").style.display = "none";
+
+                        if (username === "admin") {
+                            document.getElementById("admin-dashboard").style.display = "block";
+                         } else {
+                            document.getElementById("booking-form").style.display = "block";
+                            document.getElementById("payment-section").style.display = "none";
+                            document.getElementById("mainContent").style.display = "none";
+                            document.getElementById("roomsSection").style.display = "none";
+                            document.getElementById("admin-dashboard").style.display = "none";
+                            document.getElementById("resources").style.display = "none";
+                            }
+                         } else {
+                             alert("Invalid username or password!");
+                        }
+                    });
+                    </script>
+            </section>   
+        </div>
+        <!----------------------------Booking Section---------------------------------->
+        <div id="booking-form" style="display: none;" class="booking-form">
+            <section class="booking">
+              <h2>Booking</h2>
+                <form id="roomForm">
+                </br><label for="name">Name:</label>
+                        <input type="text" id="name" required class="text"></br>
+                    </br><label for="roomType">Room Type:</label>
+                <select id="roomType" required class="text">
+                    <option value="Single">Single - R260/night</option>
+                    <option value="Double">Double - R460/night</option>
+                    <option value="Suite">Suite - R1560/night</option>
+                    </select></br>
+                </br><label for="nights">Nights:</label>
+                    <input type="number" id="nights" min="1" required class="text"></br>
+                </br><button type="submit" class="bttn"><i class="fa-solid fa-key fa-xs"></i>Book</button>
+                    <script>
+                        const roomPrices={
+                            Single: 260,
+                            Double: 460,
+                            Suite: 1560,
+                        };
+                    document.getElementById("roomForm").addEventListener("submit", (event) => {
+                        event.preventDefault();
+
+                        const name = document.getElementById("name").value;
+                        const roomType = document.getElementById("roomType").value;
+                        const nights = parseInt(document.getElementById("nights").value, 10);
+                        const cost = roomPrices[roomType] * nights;
+
+
+                        const booking = { name, roomType, nights, cost };
+                        let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+                            bookings.push(booking);
+                            localStorage.setItem("bookings", JSON.stringify(bookings));
+  
+
+                        alert("Booking successful! Please proceed to payment.");
+                            document.getElementById("payment-section").style.display = "block";
+                            document.getElementById("LoginSection").style.display = "none";
+                            document.getElementById("booking-form").style.display = "none";
+                            document.getElementById("admin-dashboard").style.display = "none";
+                            document.getElementById("resources").style.display = "none";
+
+                            document.getElementById("cost").innerText = `R${cost}`;
+
+                            document.getElementById("roomForm").reset();
+                        
+                            });
+                    </script>
+                </form>
+            </section>
+        </div>
+        
+        <!------------------------------------------------------------Payment section--------------------------->
+        <section id="payment-section" style="display: none;" class="payment">
+            <div class="pay">
+                <form id="paymentForm">
+                    <h3>Payment</h3>
+                    <h2>Amount to pay:<div id="cost"></div></h2>
+                    <ul>
+                        <label for="cardName">Cardholder Name:</label>
+                        <input type="text" id="cardName" required class="text1"></br>
+                    </br><label for="cardNumber">Card Number:</label>
+                        <input type="text" id="cardNumber" required class="text1"></br>
+                        </br><label for="expDate" >Expiry Date:</label>
+                        <input type="text" id="expDate" placeholder="MM/YY" required class="text1"></br>
+                    </br><label for="cvc" >CVC:</label>
+                        <input type="text" id="cvc" required class="text1"></br>
+                    </ul>
+                        <i class="fa-brands fa-cc-mastercard" class="bttn"></i><i class="fa-brands fa-cc-visa" class="bttn"></i></br><button type="submit" class="bttn"><i class="fa-solid fa-wallet"></i>Pay</button>
+                    <script>
+                        
+                        document.getElementById("paymentForm").addEventListener("submit", (event) => {
+                            event.preventDefault();
+                            alert("Payment successful! Thank you for booking.");
+                            document.getElementById("mainContent").style.display = "block";
+                            document.getElementById("payment-section").style.display = "none";
+                            document.getElementById("resources").style.display = "none";
+                            
+                            if (bookroomcount < totalrooms) {
+                                bookroomcount++;
+                                saveData();
+                                updateDisplay();
+                                alert("Room booked successfully!");
+                            } else {
+                                alert("No rooms available!");
+                            }
+                            
+                            document.getElementById("paymentForm").reset();
+                            
+                        });
+                        let availroomcount = parseInt(localStorage.getItem("availroomcount")) || 57;
+                        let bookroomcount = parseInt(localStorage.getItem("bookroomcount")) || 0;
+                        let totalrooms = parseInt(localStorage.getItem("totalrooms")) || 57;
+
+                        function updateDisplay() {
+                            document.getElementById("bookroomcount").textContent = bookroomcount;
+                            document.getElementById("availroomcount").textContent = totalrooms - bookroomcount;
+                        }
+
+                        function saveData() {
+                            localStorage.setItem("totalrooms", totalrooms);
+                            localStorage.setItem("bookroomcount", bookroomcount);
+                        }
+                        updateDisplay();
+                    </script>
+                </form>
+                </div>
+        </section>
+        <!--------------------------------------------------------------------------------->
+        <section id="admin-dashboard" class="admin-dashboard" style="display: none;">
+            <h2>Admin Dashboard</h2></br>
+                <button onclick="home()" class="bttn"><i class="fa-solid fa-house"></i>Home</button>
+                <button id="viewBookings" class="bttn"><i class="fa-solid fa-tags"></i>View All Bookings</button>
+                <div class="delete-by-index">
+                    <label for="deleteBookingIndex">Enter Booking Number:</label>
+                    <input type="number" id="deleteBookingIndex" min="1" class="bttn" placeholder="Enter booking number"></br>
+                    <button type="button" id="deleteBookingButton" class="bttn">Delete</button>
+                </div>
+                <ul id="adminBookingList"></ul>
+            <script>
+                        const viewBookings = document.getElementById("viewBookings");
+                        const deleteBookingIndex = document.getElementById("deleteBookingIndex");
+                        const deleteBookingButton = document.getElementById("deleteBookingButton");
+                        const adminBookingList = document.getElementById("adminBookingList");
+
+                        function loadBookings() {
+                            return JSON.parse(localStorage.getItem("bookings")) || [];
+                        }
+
+                        function saveBookings(bookings) {
+                            localStorage.setItem("bookings", JSON.stringify(bookings));
+                        }
+
+                        function renderAdminBookings() {
+                            const bookings = loadBookings();
+                            adminBookingList.innerHTML = "";
+
+                            if (bookings.length === 0) {
+                                adminBookingList.innerHTML = "<li>No bookings found.</li>";
+                                return;
+                            }
+
+                            bookings.forEach((booking, index) => {
+                                const listItem = document.createElement("li");
+                                listItem.innerHTML = `\n<strong>${index + 1}. ${booking.name}</strong> - ${booking.roomType} for ${booking.nights} nights. Total: $${booking.cost}`;
+                                adminBookingList.appendChild(listItem);
+                            });
+                        }
+
+                        function deleteBookingAtNumber(number) {
+                            const bookings = loadBookings();
+                            const index = number - 1;
+                            if (index < 0 || index >= bookings.length) {
+                                alert("Please enter a valid booking number.");
+                                return;
+                            }
+                            bookings.splice(index, 1);
+                            saveBookings(bookings);
+                            renderAdminBookings();
+                            deleteBookingIndex.value = "";
+                        }
+
+                        viewBookings.addEventListener("click", () => {
+                            renderAdminBookings();
+                        });
+
+                        deleteBookingButton.addEventListener("click", () => {
+                            const number = parseInt(deleteBookingIndex.value, 10);
+                            if (Number.isNaN(number)) {
+                                alert("Enter a booking number to delete.");
+                                return;
+                            }
+                            deleteBookingAtNumber(number);
+                        });
+
+                function resources(){
+                document.getElementById("mainContent").style.display = "none";
+                document.getElementById("roomsSection").style.display = "none";
+                document.getElementById("LoginSection").style.display = "none";
+                document.getElementById("admin-dashboard").style.display = "none";
+                document.getElementById("resources").style.display = "block";
+                }
+            </script>
+        </section>
+        <section id="resources" style="display: none;">
+                    <h3>Resources</h3>
+        </br>
+                     <a href="https://www.w3schools.com/">w3schools</a></br>
+
+                    <a href="https://coolors.co/?home">color palette picker</a></br>
+
+                    <a href="https://dev.to/">dev.to</a></br>
+
+                    <a href="https://fonts.google.com/">Google Fonts</a></br>
+
+                    <a href="https://fontawesome.com/">font awesome</a></br>
+
+                    <a href="https://www.eurostarshotels.co.uk/exe-portals-nous.html">Hotel used as ref</a>
+        </section>
+    </body>
+</html>

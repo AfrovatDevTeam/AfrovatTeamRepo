@@ -1,0 +1,44 @@
+css 
+cascading style sheets is a style sheets language used for describing the presentation of a document written in a markup language like html.
+detiremines how elements are to be displayed
+
+
+
+external css style:
+enables the separation of content into layout, colours and font 
+
+make content more organized
+better for maintaining larger websites
+
+
+internal styles
+using the style tag you are able to style on one page 
+
+best for single page websites
+
+
+inline styling
+this is styling done in the opening tag of an element 
+best for quick fixes or single edits
+
+
+
+
+functions
+reusable blocks of code designed to preform specific tasks
+
+you give it a name (to call) 
+and parameters 
+
+there after using the return to send a result from a function
+once return is ran the function stops running
+
+then when you call it the code should be executed 
+
+
+
+
+document object model
+selecting elements :document.getelementbyid or class
+adding event listeners: .addEventListener("",message)
+
