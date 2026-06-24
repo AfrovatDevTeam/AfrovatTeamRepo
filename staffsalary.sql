@@ -1,0 +1,36 @@
+Create table StaffSalary
+(
+ID int primary key not null,
+Name varchar(45) not null,
+Surname varchar(56) not null,
+Salary money not null
+);
+
+insert into StaffSalary
+values
+(100, 'Francis', 'Anosike', 5000),
+(200, 'Sara', 'Martins', 15000),
+(300, 'Wendy', 'Mesh', 50000),
+(400, 'Mark', 'Owen', 20000),
+(500, 'John', 'Webs', 10000);
+
+select * from StaffSalary
+
+
+
+
+
+
+
+select IIF (Salary >=10000, 'Good Salary','Poor Salary') from StaffSalary
+
+select ID, Name, 
+Case 
+ when Salary =10000 then 'Good Salary'
+ when Salary = 20000 then 'Good Salary'
+ When Salary = 15000 then 'Good Salary'
+ When Salary = 50000 then 'Extremely Good Salary'
+ When Salary = 5000 then 'Poor Salary'
+ else 'never a good salary'
+ end as Result
+ from StaffSalary
